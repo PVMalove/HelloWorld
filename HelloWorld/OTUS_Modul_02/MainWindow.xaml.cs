@@ -75,7 +75,7 @@ namespace OTUS_Modul_02
                     result = Math.Min(num1, num2);
                     break;
                 case "max":
-                    result = Math.Min(num1, num2);
+                    result = Math.Max(num1, num2);
                     break;
                 case "avg":
                     result = (num1 + num2) / 2;
