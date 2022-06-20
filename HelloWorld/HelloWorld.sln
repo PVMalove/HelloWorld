@@ -11,12 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "СurrencyСonvector", "Сur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTUS_Modul_01", "OTUS_Modul_01\OTUS_Modul_01.csproj", "{9E7D2F4C-D963-4A82-A81A-A74A9842E737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTUS_Modul_02", "OTUS_Modul_02\OTUS_Modul_02.csproj", "{75B7FB89-69A7-40C2-A77B-68A157D7F711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTUS_Modul_02", "OTUS_Modul_02\OTUS_Modul_02.csproj", "{75B7FB89-69A7-40C2-A77B-68A157D7F711}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{30635DB7-D023-4228-80F5-DC2918579456}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTUS_Modul_03", "OTUS_Modul_03\OTUS_Modul_03.csproj", "{E3426939-5426-417A-80FD-627736EB2312}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{75B7FB89-69A7-40C2-A77B-68A157D7F711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75B7FB89-69A7-40C2-A77B-68A157D7F711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75B7FB89-69A7-40C2-A77B-68A157D7F711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3426939-5426-417A-80FD-627736EB2312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3426939-5426-417A-80FD-627736EB2312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3426939-5426-417A-80FD-627736EB2312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3426939-5426-417A-80FD-627736EB2312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
