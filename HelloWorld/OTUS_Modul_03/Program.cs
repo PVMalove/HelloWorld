@@ -4,13 +4,9 @@ namespace OTUS_Modul_03
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            Console.SetWindowSize(40, 30);
-            Console.SetBufferSize(40, 30);
-
-            Console.ReadLine();
-
+            Console.WriteLine("Hello World!");
         }
     }
 }
