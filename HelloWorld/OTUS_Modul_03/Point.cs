@@ -8,14 +8,21 @@ namespace OTUS_Modul_03
 {
     class Point
     {
-        public int x;
-        public int y;
-        public char c;
+        public int posX;
+        public int posY;
+        public char outputСhar;
 
         public void Draw()
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(c);
+            Console.SetCursorPosition(posX, posY);
+            Console.Write(outputСhar);
+        }
+
+        public Point(int a,  int b, char sym)
+        {
+            posX = a;
+            posY = b;
+            outputСhar = sym;
         }
 
 
