@@ -18,11 +18,11 @@ namespace OTUS_Modul_03
             Console.Write(outputСhar);
         }
 
-        public Point(int a,  int b, char sym)
+        public Point(int a,  int b, char symbol)
         {
             posX = a;
             posY = b;
-            outputСhar = sym;
+            outputСhar = symbol;
         }
 
 
