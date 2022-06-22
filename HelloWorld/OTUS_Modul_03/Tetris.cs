@@ -9,12 +9,15 @@ namespace OTUS_Modul_03
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
-            ShapeO square = new ShapeO(10, 14, 'Ы');
-            square.DrawShapeO();
+            Figure[] figures = new Figure[2];
+            figures[0] = new ShapeO(2, 3, 'Ы');
+            figures[1] = new ShapeI(6, 6, 'Ы');
 
-            ShapeI stick = new ShapeI(2, 3, 'Ы');
-            stick.DrawShapeI();
-                    
+            foreach (Figure show in figures)
+            {
+                show.DrawFigure();
+            }
+
             Console.ReadLine();
             
             

@@ -12,7 +12,7 @@ namespace OTUS_Modul_03
         public int axisY;
         public char charCell;
 
-        public void DrawFigure()
+        public void DrawFigureCells()
         {
             Console.SetCursorPosition(axisX, axisY);
             Console.Write(charCell);
