@@ -19,12 +19,13 @@ namespace OTUS_Modul_03
             //    show.DrawFigure();
             //}
 
-            ShapeO s = new ShapeO(2, 3, '#');
+            Figure s = new ShapeI(20, 3, '#');
             s.DrawFigure();
             Thread.Sleep(500);
             s.HideFigure();
-            s.MoveFigure(DirectinEnums.Left);            
+            s.RotateFigure();
             s.DrawFigure();
+            
 
 
             Console.ReadLine();

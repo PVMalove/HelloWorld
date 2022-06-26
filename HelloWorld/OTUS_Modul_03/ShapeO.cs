@@ -15,6 +15,10 @@ namespace OTUS_Modul_03
             cells[2] = new FigureCell(x, y+1, symbol);
             cells[3] = new FigureCell(x+1, y+1, symbol);            
         }
-                
+
+        public override void RotateFigure()
+        {            
+        }
+
     }
 }

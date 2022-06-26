@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OTUS_Modul_03
 {
-    class Figure
+    abstract class Figure
     {
         protected FigureCell[] cells = new FigureCell[4];
 
@@ -17,6 +17,13 @@ namespace OTUS_Modul_03
                 figure.DrawFigureCells();
             }
         }
+        public void HideFigure()
+        {
+            foreach (FigureCell figure in cells)
+            {
+                figure.HideFigureCells();
+            }
+        }
 
         public void MoveFigure(DirectinEnums directin)
         {
@@ -25,13 +32,6 @@ namespace OTUS_Modul_03
                 figure.MoveCalls(directin);
             }
         }
-        public void HideFigure()
-        {
-            foreach(FigureCell figure in cells)
-            {
-                figure.HideFigureCells();
-            }
-        }
-
+        public abstract void RotateFigure();   
     }
 }
