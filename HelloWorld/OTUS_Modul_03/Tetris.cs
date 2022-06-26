@@ -19,12 +19,16 @@ namespace OTUS_Modul_03
             //    show.DrawFigure();
             //}
 
-            Figure s = new ShapeI(20, 3, '#');
+            FigureGenerator generator = new FigureGenerator(20, -4, 'Ы');
+            Figure s = generator.GetNewFigure();
             s.DrawFigure();
-            Thread.Sleep(500);
-            s.HideFigure();
-            s.RotateFigure();
-            s.DrawFigure();
+
+            //Figure s = new ShapeI(20, 3, '#');
+            //s.DrawFigure();
+            //Thread.Sleep(500);
+            //s.HideFigure();
+            //s.RotateFigure();
+            //s.DrawFigure();
             
 
 
