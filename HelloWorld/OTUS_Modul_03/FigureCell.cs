@@ -17,6 +17,11 @@ namespace OTUS_Modul_03
             Console.SetCursorPosition(axisX, axisY);
             Console.Write(charCell);
         }
+        public void HideFigureCells()
+        {
+            Console.SetCursorPosition(axisX, axisY);
+            Console.WriteLine(' ');
+        }
 
         public FigureCell(int a,  int b, char symbol)
         {
@@ -25,6 +30,20 @@ namespace OTUS_Modul_03
             charCell = symbol;
         }
 
-
+        public void MoveCalls(DirectinEnums directin)
+        {
+            switch (directin)
+            {
+                case DirectinEnums.Down:
+                    axisY += 1;
+                    break;
+                case DirectinEnums.Left:
+                    axisX -= 1;
+                    break;
+                case DirectinEnums.Right:
+                    axisX += 1;
+                    break;              
+            }
+        }        
     }
 }

@@ -18,5 +18,20 @@ namespace OTUS_Modul_03
             }
         }
 
+        public void MoveFigure(DirectinEnums directin)
+        {
+            foreach (FigureCell figure in cells)
+            {
+                figure.MoveCalls(directin);
+            }
+        }
+        public void HideFigure()
+        {
+            foreach(FigureCell figure in cells)
+            {
+                figure.HideFigureCells();
+            }
+        }
+
     }
 }
