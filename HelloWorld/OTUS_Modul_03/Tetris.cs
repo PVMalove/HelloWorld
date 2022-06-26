@@ -19,9 +19,13 @@ namespace OTUS_Modul_03
             //    show.DrawFigure();
             //}
 
-            FigureGenerator generator = new FigureGenerator(20, -4, 'Ы');
-            Figure s = generator.GetNewFigure();
-            s.DrawFigure();
+            FigureGenerator generator = new FigureGenerator(20, 0, 'Ы');
+            Figure shape;
+            while (true)
+            {
+                FigureFall(out shape, generator);
+                shape.DrawFigure();
+            }
 
             //Figure s = new ShapeI(20, 3, '#');
             //s.DrawFigure();
@@ -29,14 +33,20 @@ namespace OTUS_Modul_03
             //s.HideFigure();
             //s.RotateFigure();
             //s.DrawFigure();
-            
-
-
-            Console.ReadLine();
-            
-            
+            //Console.ReadLine();
         }
 
-
+        private static void FigureFall(out Figure shape, FigureGenerator generator)
+        {
+            shape = generator.GetNewFigure();
+            shape.DrawFigure();
+            for(int i = 0; i < 15; i++)
+            {
+                shape.HideFigure();
+                shape.MoveFigure(DirectinEnums.Down);
+                shape.DrawFigure();
+                Thread.Sleep(100);
+            }
+        }
     }
 }
