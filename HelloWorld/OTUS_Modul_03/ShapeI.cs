@@ -21,11 +21,11 @@ namespace OTUS_Modul_03
         {
             if (cells[0].axisX == cells[1].axisX)
             {
-                RotateHorisontal(); 
+                RotateHorisontal();                
             }
             else
-            {
-                RotateVertical();
+            {                
+                RotateVertical();                
             }
         }
         

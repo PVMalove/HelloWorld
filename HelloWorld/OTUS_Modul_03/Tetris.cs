@@ -4,13 +4,16 @@ using System.Threading;
 namespace OTUS_Modul_03
 {
     class Tetris
-    {
+    {        
+        public static int windowWidth = 40;
+        public static int windowHeight = 30;
         static void Main()
         {
-            Console.SetWindowSize(40, 30);
-            Console.SetBufferSize(40, 30);
+            Console.CursorVisible = false;
+            Console.SetWindowSize(windowWidth, windowHeight);
+            Console.SetBufferSize(windowWidth, windowHeight);
                       
-            FigureGenerator generator = new FigureGenerator(20, 0, 'Ы');
+            FigureGenerator generator = new FigureGenerator(20, 0, '*');
             Figure currentFigure = generator.GetNewFigure();
             while (true)
             {
@@ -34,6 +37,11 @@ namespace OTUS_Modul_03
                     break;
                 case ConsoleKey.DownArrow:
                     currentFigure.MoveFigure(DirectinEnums.Down);
+                    break;
+                case ConsoleKey.Spacebar:
+                    currentFigure.HideFigure();
+                    currentFigure.RotateFigure();
+                    currentFigure.DrawFigure();
                     break;
             }
         }

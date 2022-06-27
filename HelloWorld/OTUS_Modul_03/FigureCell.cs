@@ -15,12 +15,19 @@ namespace OTUS_Modul_03
         public void DrawFigureCells()
         {
             Console.SetCursorPosition(axisX, axisY);
-            Console.Write(charCell);
+            Console.Write(charCell);      
         }
         public void HideFigureCells()
         {
             Console.SetCursorPosition(axisX, axisY);
-            Console.WriteLine(' ');
+            Console.Write(' ');
+        }
+
+        public FigureCell(FigureCell cloneCell)
+        {
+            axisX = cloneCell.axisX;
+            axisY = cloneCell.axisY;
+            charCell = cloneCell.charCell;
         }
 
         public FigureCell(int a,  int b, char symbol)
