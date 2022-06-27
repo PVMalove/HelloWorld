@@ -27,10 +27,12 @@ namespace OTUS_Modul_03
 
         public void MoveFigure(DirectinEnums directin)
         {
+            HideFigure();
             foreach (FigureCell figure in cells)
             {
                 figure.MoveCalls(directin);
             }
+            DrawFigure();
         }
         public abstract void RotateFigure();   
     }

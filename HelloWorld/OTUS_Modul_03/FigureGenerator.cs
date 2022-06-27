@@ -22,7 +22,6 @@ namespace OTUS_Modul_03
                 return new ShapeO(_axisX, _axisY, _charCell);
             else
                 return new ShapeI(_axisX, _axisY, _charCell);
-
         }
     }
 }

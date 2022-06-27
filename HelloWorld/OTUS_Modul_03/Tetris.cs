@@ -9,43 +9,32 @@ namespace OTUS_Modul_03
         {
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
-
-            //Figure[] figures = new Figure[2];
-            //figures[0] = new ShapeO(2, 3, 'Ы');
-            //figures[1] = new ShapeI(6, 6, 'Ы');
-
-            //foreach (Figure show in figures)
-            //{
-            //    show.DrawFigure();
-            //}
-
+                      
             FigureGenerator generator = new FigureGenerator(20, 0, 'Ы');
-            Figure shape;
+            Figure currentFigure = generator.GetNewFigure();
             while (true)
             {
-                FigureFall(out shape, generator);
-                shape.DrawFigure();
+               if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    HandleKey(currentFigure, key);
+                }
             }
-
-            //Figure s = new ShapeI(20, 3, '#');
-            //s.DrawFigure();
-            //Thread.Sleep(500);
-            //s.HideFigure();
-            //s.RotateFigure();
-            //s.DrawFigure();
-            //Console.ReadLine();
         }
 
-        private static void FigureFall(out Figure shape, FigureGenerator generator)
+        private static void HandleKey(Figure currentFigure, ConsoleKeyInfo key)
         {
-            shape = generator.GetNewFigure();
-            shape.DrawFigure();
-            for(int i = 0; i < 15; i++)
+            switch (key.Key)
             {
-                shape.HideFigure();
-                shape.MoveFigure(DirectinEnums.Down);
-                shape.DrawFigure();
-                Thread.Sleep(100);
+                case ConsoleKey.LeftArrow:
+                    currentFigure.MoveFigure(DirectinEnums.Left);
+                    break;
+                case ConsoleKey.RightArrow:
+                    currentFigure.MoveFigure(DirectinEnums.Right);
+                    break;
+                case ConsoleKey.DownArrow:
+                    currentFigure.MoveFigure(DirectinEnums.Down);
+                    break;
             }
         }
     }
