@@ -15,7 +15,8 @@ namespace OTUS_Modul_03
         public void DrawFigureCells()
         {
             Console.SetCursorPosition(axisX, axisY);
-            Console.Write(charCell);      
+            Console.Write(charCell);
+            Console.SetCursorPosition(0, 0);
         }
         public void HideFigureCells()
         {

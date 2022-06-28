@@ -9,7 +9,6 @@ namespace OTUS_Modul_03
     abstract class Figure
     {
         const int LENGHT = 4;
-
         protected FigureCell[] cells = new FigureCell[LENGHT];
 
         public void DrawFigure()
