@@ -17,32 +17,32 @@ namespace OTUS_Modul_03
             DrawFigure();
         }
 
-        public override void RotateFigure()
+        public override void RotateFigure(FigureCell[] cloneCells)
         {
-            if (cells[0].axisX == cells[1].axisX)
+            if (cloneCells[0].axisX == cloneCells[1].axisX)
             {
-                RotateHorisontal();                
+                RotateHorisontal(cloneCells);                
             }
             else
             {                
-                RotateVertical();                
+                RotateVertical(cloneCells);                
             }
         }
         
-        private void RotateHorisontal()
+        private void RotateHorisontal(FigureCell[] cloneCells)
         {
-            for(int i = 0; i < cells.Length; i++)
+            for(int i = 0; i < cloneCells.Length; i++)
             {
-                cells[i].axisY = cells[0].axisY;
-                cells[i].axisX = cells[0].axisX + i;
+                cloneCells[i].axisY = cloneCells[0].axisY;
+                cloneCells[i].axisX = cloneCells[0].axisX + i;
             }
         }
-        private void RotateVertical()
+        private void RotateVertical(FigureCell[] cloneCells)
         {
-            for (int i = 0; i < cells.Length; i++)
+            for (int i = 0; i < cloneCells.Length; i++)
             {
-                cells[i].axisY = cells[0].axisY + i;
-                cells[i].axisX = cells[0].axisX;
+                cloneCells[i].axisY = cloneCells[0].axisY + i;
+                cloneCells[i].axisX = cloneCells[0].axisX;
             }
         }
     }

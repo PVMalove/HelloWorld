@@ -27,13 +27,22 @@ namespace OTUS_Modul_03
             }
         }
 
-        public void MoveFigure(DirectinEnums directin)
+        public void TryMoveFigure(DirectinEnums directin)
         {
             HideFigure();
             FigureCell[] cloneFigure = CloneFigure();
             CloneMoveFigure(cloneFigure, directin);
             if (VerifyPositionFigure(cloneFigure))
-                 cells = cloneFigure;
+                cells = cloneFigure;
+            DrawFigure();
+        }
+        public void TryRotateFigure()
+         {
+            HideFigure();
+            FigureCell[] cloneFigure = CloneFigure();
+            RotateFigure(cloneFigure);
+            if (VerifyPositionFigure(cloneFigure))
+                cells = cloneFigure;
             DrawFigure();
         }
 
@@ -41,7 +50,7 @@ namespace OTUS_Modul_03
         {
             foreach(FigureCell figure in cloneCells)
             {
-                if (figure.axisX < 0 || figure.axisY < 0 || figure.axisX >= Tetris.windowWidth || figure.axisY >= Tetris.windowHeight)
+                if (figure.axisX < 0 || figure.axisY < 0 || figure.axisX >= GameField.windowWidth || figure.axisY >= GameField.windowHeight)
                     return false;
             }
             return true;
@@ -64,6 +73,6 @@ namespace OTUS_Modul_03
                 cloneFegure.MoveCalls(directin);
             }            
         }
-        public abstract void RotateFigure();   
+        public abstract void RotateFigure(FigureCell[] cloneCells);   
     }
 }
