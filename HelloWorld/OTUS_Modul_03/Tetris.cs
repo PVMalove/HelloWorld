@@ -12,7 +12,7 @@ namespace OTUS_Modul_03
             Console.SetWindowSize(GameField.WindowWidth, GameField.WindowHeight);
             Console.SetBufferSize(GameField.WindowWidth, GameField.WindowHeight);
                                               
-            generator = new FigureGenerator(GameField.WindowWidth/2, 0, 'Ы');
+            generator = new FigureGenerator(GameField.WindowWidth/2, 0, CellsRenderer.DEFOULT_SYMBOL);
             Figure currentFigure = generator.GetNewFigure();
             while (true)
             {
@@ -30,6 +30,7 @@ namespace OTUS_Modul_03
             if (resultHandleKey == ResultCollision.FigureCollision || resultHandleKey == ResultCollision.DownBorderCollision)
             {
                 GameField.AddFigure(currentFigure);
+                GameField.TryDeleteLines();
                 currentFigure = generator.GetNewFigure();
                 return true;
             }
