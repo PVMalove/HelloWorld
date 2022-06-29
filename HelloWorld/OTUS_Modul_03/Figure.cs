@@ -31,7 +31,7 @@ namespace OTUS_Modul_03
             HideFigure();
             FigureCell[] cloneFigure = CloneFigure();
             CloneMoveFigure(cloneFigure, directin);
-            if (VerifyPositionFigure(cloneFigure))
+            if (IsAcceptablePositionFigure(cloneFigure))
                 cells = cloneFigure;
             DrawFigure();
         }
@@ -40,16 +40,16 @@ namespace OTUS_Modul_03
             HideFigure();
             FigureCell[] cloneFigure = CloneFigure();
             RotateFigure(cloneFigure);
-            if (VerifyPositionFigure(cloneFigure))
+            if (IsAcceptablePositionFigure(cloneFigure))
                 cells = cloneFigure;
             DrawFigure();
         }
 
-        private bool VerifyPositionFigure(FigureCell[] cloneCells)
+        private static bool IsAcceptablePositionFigure(FigureCell[] cloneCells)
         {
             foreach(FigureCell figure in cloneCells)
             {
-                if (figure.axisX < 0 || figure.axisY < 0 || figure.axisX >= GameField.windowWidth || figure.axisY >= GameField.windowHeight)
+                if (figure.AxisX < 0 || figure.AxisY < 0 || figure.AxisX >= GameField.WindowWidth || figure.AxisY >= GameField.WindowHeight)
                     return false;
             }
             return true;
@@ -65,7 +65,7 @@ namespace OTUS_Modul_03
             return cloneCells;
         }
 
-        public void CloneMoveFigure(FigureCell[] cloneCells, DirectinEnums directin)
+        public static void CloneMoveFigure(FigureCell[] cloneCells, DirectinEnums directin)
         {
             foreach (FigureCell cloneFegure in cloneCells)
             {

@@ -19,7 +19,7 @@ namespace OTUS_Modul_03
 
         public override void RotateFigure(FigureCell[] cloneCells)
         {
-            if (cloneCells[0].axisX == cloneCells[1].axisX)
+            if (cloneCells[0].AxisX == cloneCells[1].AxisX)
             {
                 RotateHorisontal(cloneCells);                
             }
@@ -33,16 +33,16 @@ namespace OTUS_Modul_03
         {
             for(int i = 0; i < cloneCells.Length; i++)
             {
-                cloneCells[i].axisY = cloneCells[0].axisY;
-                cloneCells[i].axisX = cloneCells[0].axisX + i;
+                cloneCells[i].AxisY = cloneCells[0].AxisY;
+                cloneCells[i].AxisX = cloneCells[0].AxisX + i;
             }
         }
         private void RotateVertical(FigureCell[] cloneCells)
         {
             for (int i = 0; i < cloneCells.Length; i++)
             {
-                cloneCells[i].axisY = cloneCells[0].axisY + i;
-                cloneCells[i].axisX = cloneCells[0].axisX;
+                cloneCells[i].AxisY = cloneCells[0].AxisY + i;
+                cloneCells[i].AxisX = cloneCells[0].AxisX;
             }
         }
     }

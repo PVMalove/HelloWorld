@@ -8,10 +8,10 @@ namespace OTUS_Modul_03
         static void Main()
         {
             Console.CursorVisible = false;
-            Console.SetWindowSize(GameField.windowWidth, GameField.windowHeight);
-            Console.SetBufferSize(GameField.windowWidth, GameField.windowHeight);
-                                  
-            FigureGenerator generator = new FigureGenerator(20, 0, 'Ы');
+            Console.SetWindowSize(GameField.WindowWidth, GameField.WindowHeight);
+            Console.SetBufferSize(GameField.WindowWidth, GameField.WindowHeight);
+                                              
+            FigureGenerator generator = new FigureGenerator(GameField.WindowWidth/2, 0, 'Ы');
             Figure currentFigure = generator.GetNewFigure();
             while (true)
             {

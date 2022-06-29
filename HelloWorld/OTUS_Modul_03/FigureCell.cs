@@ -8,34 +8,34 @@ namespace OTUS_Modul_03
 {
     class FigureCell
     {
-        public int axisX;
-        public int axisY;
-        public char charCell;
+        public int AxisX { get; set; }
+        public int AxisY { get; set; }
+        public char CharCell { get; set; }
 
         public void DrawFigureCells()
         {
-            Console.SetCursorPosition(axisX, axisY);
-            Console.Write(charCell);
+            Console.SetCursorPosition(AxisX, AxisY);
+            Console.Write(CharCell);
             Console.SetCursorPosition(0, 0);
         }
         public void HideFigureCells()
         {
-            Console.SetCursorPosition(axisX, axisY);
+            Console.SetCursorPosition(AxisX, AxisY);
             Console.Write(' ');
         }
 
         public FigureCell(FigureCell cloneCell)
         {
-            axisX = cloneCell.axisX;
-            axisY = cloneCell.axisY;
-            charCell = cloneCell.charCell;
+            AxisX = cloneCell.AxisX;
+            AxisY = cloneCell.AxisY;
+            CharCell = cloneCell.CharCell;
         }
 
         public FigureCell(int a,  int b, char symbol)
         {
-            axisX = a;
-            axisY = b;
-            charCell = symbol;
+            AxisX = a;
+            AxisY = b;
+            CharCell = symbol;
         }
 
         public void MoveCalls(DirectinEnums directin)
@@ -43,13 +43,13 @@ namespace OTUS_Modul_03
             switch (directin)
             {
                 case DirectinEnums.Down:
-                    axisY += 1;
+                    AxisY += 1;
                     break;
                 case DirectinEnums.Left:
-                    axisX -= 1;
+                    AxisX -= 1;
                     break;
                 case DirectinEnums.Right:
-                    axisX += 1;
+                    AxisX += 1;
                     break;              
             }
         }        

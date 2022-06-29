@@ -8,7 +8,36 @@ namespace OTUS_Modul_03
 {
     static class GameField
     {
-        public static int windowWidth = 40;
-        public static int windowHeight = 30;
+        private static int _windowWidth = 40;
+        private static int _windowHeight = 30;
+
+        public static int WindowWidth
+        {
+            get
+            {
+                return _windowWidth;
+            }
+            set
+            {
+                _windowWidth = value;
+                Console.SetWindowSize(_windowWidth, GameField.WindowHeight);
+                Console.SetBufferSize(_windowWidth, GameField.WindowHeight);
+            }
+        }
+
+        public static int WindowHeight
+        {
+            get
+            {
+                return _windowHeight;
+            }
+            set
+            {
+                _windowHeight = value;
+                Console.SetWindowSize(GameField.WindowWidth, _windowHeight);
+                Console.SetBufferSize(GameField.WindowWidth, _windowHeight);
+            }
+        }
+
     }
 }
