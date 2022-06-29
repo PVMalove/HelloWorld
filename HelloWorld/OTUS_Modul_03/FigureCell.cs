@@ -38,17 +38,17 @@ namespace OTUS_Modul_03
             CharCell = symbol;
         }
 
-        public void MoveCalls(DirectinEnums directin)
+        public void MoveCalls(DirectionMovementFigure directin)
         {
             switch (directin)
             {
-                case DirectinEnums.Down:
+                case DirectionMovementFigure.Down:
                     AxisY += 1;
                     break;
-                case DirectinEnums.Left:
+                case DirectionMovementFigure.Left:
                     AxisX -= 1;
                     break;
-                case DirectinEnums.Right:
+                case DirectionMovementFigure.Right:
                     AxisX += 1;
                     break;              
             }

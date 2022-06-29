@@ -39,5 +39,26 @@ namespace OTUS_Modul_03
             }
         }
 
+        private static bool [][] _isCellFigureCellField;
+        static GameField()
+        {
+            _isCellFigureCellField = new bool[WindowHeight][];
+            for(int i = 0; i < WindowHeight; i++)
+            {
+                _isCellFigureCellField[i] = new bool[WindowWidth];
+            }           
+        }
+        public static void AddFigure(Figure addFigure)
+        {
+            foreach(var figure in addFigure.cells)
+            {
+                _isCellFigureCellField[figure.AxisY][figure.AxisX] = true;
+            }
+        }
+        public static bool IsCollisionFigures(FigureCell cell)
+        {
+            return _isCellFigureCellField[cell.AxisY][cell.AxisX];
+        }
+
     }
 }

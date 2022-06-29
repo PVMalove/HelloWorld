@@ -9,7 +9,7 @@ namespace OTUS_Modul_03
     abstract class Figure
     {
         const int LENGHT = 4;
-        protected FigureCell[] cells = new FigureCell[LENGHT];
+        public FigureCell[] cells = new FigureCell[LENGHT];
 
         public void DrawFigure()
         {
@@ -26,33 +26,41 @@ namespace OTUS_Modul_03
             }
         }
 
-        public void TryMoveFigure(DirectinEnums directin)
+        public ResultCollision TryMoveFigure(DirectionMovementFigure directin)
         {
             HideFigure();
             FigureCell[] cloneFigure = CloneFigure();
             CloneMoveFigure(cloneFigure, directin);
-            if (IsAcceptablePositionFigure(cloneFigure))
+            ResultCollision verificationResult = IsAcceptablePositionFigure(cloneFigure);
+            if (verificationResult == ResultCollision.NoCollision)
                 cells = cloneFigure;
             DrawFigure();
+            return verificationResult;
         }
-        public void TryRotateFigure()
+        public ResultCollision TryRotateFigure()
          {
             HideFigure();
             FigureCell[] cloneFigure = CloneFigure();
             RotateFigure(cloneFigure);
-            if (IsAcceptablePositionFigure(cloneFigure))
+            ResultCollision verificationResult = IsAcceptablePositionFigure(cloneFigure);
+            if (verificationResult == ResultCollision.NoCollision)
                 cells = cloneFigure;
             DrawFigure();
+            return verificationResult;
         }
 
-        private static bool IsAcceptablePositionFigure(FigureCell[] cloneCells)
+        private ResultCollision IsAcceptablePositionFigure(FigureCell[] cloneCells)
         {
             foreach(FigureCell figure in cloneCells)
             {
-                if (figure.AxisX < 0 || figure.AxisY < 0 || figure.AxisX >= GameField.WindowWidth || figure.AxisY >= GameField.WindowHeight)
-                    return false;
+                if (figure.AxisY >= GameField.WindowHeight)
+                    return ResultCollision.DownBorderCollision;
+                if (figure.AxisX >= GameField.WindowWidth || figure.AxisX < 0 || figure.AxisY < 0)
+                    return ResultCollision.BorderCollision;
+                if (GameField.IsCollisionFigures(figure))
+                    return ResultCollision.FigureCollision;   
             }
-            return true;
+            return ResultCollision.NoCollision;
         }
 
         private FigureCell[] CloneFigure()
@@ -65,7 +73,7 @@ namespace OTUS_Modul_03
             return cloneCells;
         }
 
-        public static void CloneMoveFigure(FigureCell[] cloneCells, DirectinEnums directin)
+        public static void CloneMoveFigure(FigureCell[] cloneCells, DirectionMovementFigure directin)
         {
             foreach (FigureCell cloneFegure in cloneCells)
             {

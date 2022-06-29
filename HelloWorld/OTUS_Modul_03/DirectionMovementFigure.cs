@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OTUS_Modul_03
 {
-    enum DirectinEnums
+    enum DirectionMovementFigure
     {
         Left, Right, Down
     }
