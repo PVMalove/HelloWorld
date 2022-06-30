@@ -41,8 +41,17 @@ namespace OTUS_Modul_03
             {
                 GameField.AddFigure(currentFigure);
                 GameField.TryDeleteLines();
-                currentFigure = generator.GetNewFigure();
-                return true;
+                if (currentFigure.IsOnTop())
+                {
+                    GameField.WriteGameOver();
+                    timer.Elapsed -= OnTimerEvent;
+                    return true;
+                }
+                else
+                {
+                    currentFigure = generator.GetNewFigure();
+                    return false;
+                }                
             }
             else
                 return false;
@@ -77,6 +86,6 @@ namespace OTUS_Modul_03
             ResultCollision resultMove = currentFigure.TryMoveFigure(DirectionMovementFigure.Down);
             ProcessResult(resultMove, ref currentFigure);
             Monitor.Exit(_lockObject);
-        }
+        }                
     }
 }

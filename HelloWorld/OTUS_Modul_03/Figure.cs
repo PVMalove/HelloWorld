@@ -29,29 +29,52 @@ namespace OTUS_Modul_03
         public ResultCollision TryMoveFigure(DirectionMovementFigure directin)
         {
             HideFigure();
-            FigureCell[] cloneFigure = CloneFigure();
-            CloneMoveFigure(cloneFigure, directin);
-            ResultCollision verificationResult = IsAcceptablePositionFigure(cloneFigure);
-            if (verificationResult == ResultCollision.NoCollision)
-                cells = cloneFigure;
-            DrawFigure();
-            return verificationResult;
-        }
-        public ResultCollision TryRotateFigure()
-         {
-            HideFigure();
-            FigureCell[] cloneFigure = CloneFigure();
-            RotateFigure(cloneFigure);
-            ResultCollision verificationResult = IsAcceptablePositionFigure(cloneFigure);
-            if (verificationResult == ResultCollision.NoCollision)
-                cells = cloneFigure;
+            MoveFigure(directin);
+            ResultCollision verificationResult = IsAcceptablePositionFigure();
+            if (verificationResult != ResultCollision.NoCollision)
+                MoveFigure(ReverseMove(directin));
             DrawFigure();
             return verificationResult;
         }
 
-        private ResultCollision IsAcceptablePositionFigure(FigureCell[] cloneCells)
+        private DirectionMovementFigure ReverseMove(DirectionMovementFigure directin)
         {
-            foreach(FigureCell figure in cloneCells)
+            switch (directin)
+            {
+                case DirectionMovementFigure.Left:
+                    return DirectionMovementFigure.Right;
+                case DirectionMovementFigure.Right:
+                    return DirectionMovementFigure.Left;
+                case DirectionMovementFigure.Down:
+                    return DirectionMovementFigure.Up;
+                case DirectionMovementFigure.Up:
+                    return DirectionMovementFigure.Down;
+            }
+            return directin;
+        }
+
+        private void MoveFigure(DirectionMovementFigure direction)
+        {
+            foreach(FigureCell figure in cells)
+            {
+                figure.MoveCalls(direction);
+            }
+        }
+
+        public ResultCollision TryRotateFigure()
+         {
+            HideFigure();           
+            RotateFigure();
+            ResultCollision verificationResult = IsAcceptablePositionFigure();
+            if (verificationResult != ResultCollision.NoCollision)
+                RotateFigure();
+            DrawFigure();
+            return verificationResult;
+        }
+
+        private ResultCollision IsAcceptablePositionFigure()
+        {
+            foreach(FigureCell figure in cells)
             {
                 if (figure.AxisY >= GameField.WindowHeight)
                     return ResultCollision.DownBorderCollision;
@@ -63,23 +86,11 @@ namespace OTUS_Modul_03
             return ResultCollision.NoCollision;
         }
 
-        private FigureCell[] CloneFigure()
+        internal bool IsOnTop()
         {
-            FigureCell[] cloneCells = new FigureCell[LENGHT];
-            for(int i = 0; i < LENGHT; i++)
-            {
-                cloneCells[i] = new FigureCell(cells[i]);
-            }
-            return cloneCells;
+            return cells[0].AxisY == 0;
         }
 
-        public static void CloneMoveFigure(FigureCell[] cloneCells, DirectionMovementFigure directin)
-        {
-            foreach (FigureCell cloneFegure in cloneCells)
-            {
-                cloneFegure.MoveCalls(directin);
-            }            
-        }
-        public abstract void RotateFigure(FigureCell[] cloneCells);   
+        public abstract void RotateFigure();   
     }
 }

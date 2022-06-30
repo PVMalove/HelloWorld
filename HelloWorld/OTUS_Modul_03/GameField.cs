@@ -8,7 +8,7 @@ namespace OTUS_Modul_03
 {
     static class GameField
     {
-        private static int _windowWidth = 25;
+        private static int _windowWidth = 20;
         private static int _windowHeight = 15;
 
         public static int WindowWidth
@@ -106,6 +106,13 @@ namespace OTUS_Modul_03
             return _isCellFigureCellField[cell.AxisY][cell.AxisX];
         }
 
+        public static void WriteGameOver()
+        {
+            string gameOver = "G A M E   O V E R";
+            Console.Clear();
+            Console.SetCursorPosition(GameField.WindowWidth / 2 - gameOver.Length / 2, GameField.WindowHeight / 2);
+            Console.WriteLine(gameOver);
+        }
 
     }
 }

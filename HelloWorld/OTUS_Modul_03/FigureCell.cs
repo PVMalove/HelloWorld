@@ -24,13 +24,6 @@ namespace OTUS_Modul_03
             Console.Write(' ');
         }
 
-        public FigureCell(FigureCell cloneCell)
-        {
-            AxisX = cloneCell.AxisX;
-            AxisY = cloneCell.AxisY;
-            CharCell = cloneCell.CharCell;
-        }
-
         public FigureCell(int a,  int b, char symbol)
         {
             AxisX = a;
@@ -50,7 +43,10 @@ namespace OTUS_Modul_03
                     break;
                 case DirectionMovementFigure.Right:
                     AxisX += 1;
-                    break;              
+                    break;
+                case DirectionMovementFigure.Up:
+                    AxisY -= 1;
+                    break;
             }
         }        
     }

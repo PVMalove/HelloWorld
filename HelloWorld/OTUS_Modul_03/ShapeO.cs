@@ -17,7 +17,7 @@ namespace OTUS_Modul_03
             DrawFigure();
         }
 
-        public override void RotateFigure(FigureCell[] cloneCells)
+        public override void RotateFigure()
         {            
         }
 

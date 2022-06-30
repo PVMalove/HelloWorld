@@ -8,6 +8,6 @@ namespace OTUS_Modul_03
 {
     enum DirectionMovementFigure
     {
-        Left, Right, Down
+        Left, Right, Down, Up
     }
 }
