@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Timers;
+using Microsoft.SmallBasic.Library;
 
 namespace OTUS_Modul_03
 {
@@ -8,6 +9,7 @@ namespace OTUS_Modul_03
     {
         const int TIMER_INTERVL = 500;
         static System.Timers.Timer timer;
+        static bool gameOver = false;
 
         private static Object _lockObject = new object(); 
         
@@ -17,23 +19,24 @@ namespace OTUS_Modul_03
         static void Main()
         {
             RendererProvier.Renderer.SizeGameField();
-                                              
+            SetTimer();
             generator = new FigureGenerator(GameField.WindowWidth/2, 0);
             currentFigure = generator.GetNewFigure();
-            SetTimer();
-            while (true)
-            {
-               if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    Monitor.Enter(_lockObject);
-                    ResultCollision resultHandleKey = HandleKey(currentFigure, key);
-                    ProcessResult(resultHandleKey, ref currentFigure);
-                    Monitor.Exit(_lockObject);
-                }
-            }            
+            currentFigure.DrawFigure();
+            GraphicsWindow.KeyDown += GraphicsWindow_KeyDown;
+             
         }
-                
+
+        private static void GraphicsWindow_KeyDown()
+        {
+            Monitor.Enter(_lockObject);
+            var result = HandleKey(currentFigure, GraphicsWindow.LastKey);
+            if (GraphicsWindow.LastKey == "Down")
+                gameOver = ProcessResult(result, ref currentFigure);
+            Monitor.Exit(_lockObject);
+
+        }
+
         private static bool ProcessResult(ResultCollision resultHandleKey, ref Figure currentFigure)
         {
             if (resultHandleKey == ResultCollision.FigureCollision || resultHandleKey == ResultCollision.DownBorderCollision)
@@ -56,17 +59,17 @@ namespace OTUS_Modul_03
                 return false;
         }
 
-        private static ResultCollision HandleKey(Figure currentFigure, ConsoleKeyInfo key)
+        private static ResultCollision HandleKey(Figure currentFigure, String key)
         {
-            switch (key.Key)
+            switch (key)
             {
-                case ConsoleKey.LeftArrow:
+                case "Left":
                     return currentFigure.TryMoveFigure(DirectionMovementFigure.Left);                    
-                case ConsoleKey.RightArrow:
+                case "Right":
                     return currentFigure.TryMoveFigure(DirectionMovementFigure.Right);
-                case ConsoleKey.DownArrow:
+                case "Down":
                     return currentFigure.TryMoveFigure(DirectionMovementFigure.Down);
-                case ConsoleKey.Spacebar:
+                case "Space":
                     return currentFigure.TryRotateFigure();
             }
             return ResultCollision.NoCollision;

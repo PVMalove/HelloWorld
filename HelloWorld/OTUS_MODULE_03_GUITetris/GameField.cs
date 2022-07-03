@@ -1,23 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace OTUS_Modul_03
 {
     static class GameField 
     {
-        private static int _windowWidth = 30;
-        private static int _windowHeight = 20;
+        private static int _windowWidth = 10;
+        private static int _windowHeight = 15;
 
         public static int WindowWidth
         {
             get
             {
                 return _windowWidth;
-            }
-            set
-            {
-                _windowWidth = value;
-                Console.SetWindowSize(_windowWidth, GameField.WindowHeight);
-                Console.SetBufferSize(_windowWidth, GameField.WindowHeight);
             }
         }
 
@@ -26,12 +24,6 @@ namespace OTUS_Modul_03
             get
             {
                 return _windowHeight;
-            }
-            set
-            {
-                _windowHeight = value;
-                Console.SetWindowSize(GameField.WindowWidth, _windowHeight);
-                Console.SetBufferSize(GameField.WindowWidth, _windowHeight);
             }
         }
 

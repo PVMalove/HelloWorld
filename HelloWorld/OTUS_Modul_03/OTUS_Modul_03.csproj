@@ -5,4 +5,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="SmallBasicLibrary">
+      <HintPath>C:\Program Files (x86)\Microsoft\Small Basic\SmallBasicLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
