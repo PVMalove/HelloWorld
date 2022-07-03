@@ -94,9 +94,9 @@ namespace OTUS_Modul_03
                 for(int i = 0; i < WindowWidth; i++)
                 {
                     if (_isCellFigureCellField[h][i])
-                        CellsRenderer.DrawCells(i, h);
+                        RendererProvier.Renderer.DrawCells(i, h);
                     else
-                        CellsRenderer.HideCells(i, h);
+                        RendererProvier.Renderer.HideCells(i, h);
                 }
             }    
         }        
@@ -105,14 +105,5 @@ namespace OTUS_Modul_03
         {
             return _isCellFigureCellField[cell.AxisY][cell.AxisX];
         }
-
-        public static void WriteGameOver()
-        {
-            string gameOver = "G A M E   O V E R";
-            Console.Clear();
-            Console.SetCursorPosition(GameField.WindowWidth / 2 - gameOver.Length / 2, GameField.WindowHeight / 2);
-            Console.WriteLine(gameOver);
-        }
-
     }
 }

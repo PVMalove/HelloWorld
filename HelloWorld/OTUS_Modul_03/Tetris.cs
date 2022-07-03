@@ -15,11 +15,9 @@ namespace OTUS_Modul_03
         static FigureGenerator generator;
         static void Main()
         {
-            Console.CursorVisible = false;
-            Console.SetWindowSize(GameField.WindowWidth, GameField.WindowHeight);
-            Console.SetBufferSize(GameField.WindowWidth, GameField.WindowHeight);
+            RendererProvier.Renderer.SizeGameField();
                                               
-            generator = new FigureGenerator(GameField.WindowWidth/2, 0, CellsRenderer.DEFOULT_SYMBOL);
+            generator = new FigureGenerator(GameField.WindowWidth/2, 0);
             currentFigure = generator.GetNewFigure();
             SetTimer();
             while (true)
@@ -43,7 +41,7 @@ namespace OTUS_Modul_03
                 GameField.TryDeleteLines();
                 if (currentFigure.IsOnTop())
                 {
-                    GameField.WriteGameOver();
+                    RendererProvier.Renderer.WriteGameOver();
                     timer.Elapsed -= OnTimerEvent;
                     return true;
                 }

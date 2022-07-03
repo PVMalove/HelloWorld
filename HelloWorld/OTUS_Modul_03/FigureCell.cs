@@ -10,25 +10,20 @@ namespace OTUS_Modul_03
     {
         public int AxisX { get; set; }
         public int AxisY { get; set; }
-        public char CharCell { get; set; }
 
         public void DrawFigureCells()
         {
-            Console.SetCursorPosition(AxisX, AxisY);
-            Console.Write(CharCell);
-            Console.SetCursorPosition(0, 0);
+            RendererProvier.Renderer.DrawCells(AxisX, AxisY);
         }
         public void HideFigureCells()
         {
-            Console.SetCursorPosition(AxisX, AxisY);
-            Console.Write(' ');
+            RendererProvier.Renderer.HideCells(AxisX, AxisY);
         }
 
-        public FigureCell(int a,  int b, char symbol)
+        public FigureCell(int a,  int b)
         {
             AxisX = a;
             AxisY = b;
-            CharCell = symbol;
         }
 
         public void MoveCalls(DirectionMovementFigure directin)

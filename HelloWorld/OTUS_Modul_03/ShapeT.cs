@@ -8,12 +8,12 @@ namespace OTUS_Modul_03
 {
     class ShapeT : Figure
     {
-        public ShapeT(int x, int y, char symbol)
+        public ShapeT(int x, int y)
         {
-            cells[0] = new FigureCell(x, y + 1, symbol);
-            cells[1] = new FigureCell(x + 1, y + 1, symbol);
-            cells[2] = new FigureCell(x + 1, y + 2, symbol);
-            cells[3] = new FigureCell(x + 2, y + 1, symbol);            
+            cells[0] = new FigureCell(x, y + 1);
+            cells[1] = new FigureCell(x + 1, y + 1);
+            cells[2] = new FigureCell(x + 1, y + 2);
+            cells[3] = new FigureCell(x + 2, y + 1);            
             DrawFigure();
         }
 

@@ -8,12 +8,12 @@ namespace OTUS_Modul_03
 {
     class ShapeO : Figure
     {
-        public ShapeO(int x, int y, char symbol)
+        public ShapeO(int x, int y)
         {
-            cells[0] = new FigureCell(x, y, symbol);
-            cells[1] = new FigureCell(x+1, y, symbol);
-            cells[2] = new FigureCell(x, y+1, symbol);
-            cells[3] = new FigureCell(x+1, y+1, symbol);
+            cells[0] = new FigureCell(x, y);
+            cells[1] = new FigureCell(x+1, y);
+            cells[2] = new FigureCell(x, y+1);
+            cells[3] = new FigureCell(x+1, y+1);
             DrawFigure();
         }
 
