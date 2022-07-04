@@ -15,7 +15,7 @@ namespace OTUS_Module_03
         public void HideCells(int axisX, int axisY)
         {
             GraphicsWindow.PenColor = "LightGreen";
-            GraphicsWindow.PenWidth = 2;
+            GraphicsWindow.PenWidth = 3;
             GraphicsWindow.DrawRectangle(axisX * SIZE, axisY * SIZE, SIZE, SIZE);
         }
 

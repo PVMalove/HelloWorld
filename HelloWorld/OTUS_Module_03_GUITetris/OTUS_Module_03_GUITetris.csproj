@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CF9CDAFF-21B9-44FA-999A-DD57B8C20C93}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OTUS_Module_03_GUITetris</RootNamespace>
-    <AssemblyName>OTUS_Module_03_GUITetris</AssemblyName>
+    <RootNamespace>OTUS_MODULE_03_GUITetris</RootNamespace>
+    <AssemblyName>OTUS_MODULE_03_GUITetris</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
