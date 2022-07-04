@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{264BC3F4-1780-4103-BD6D-A466538FA6E9}</ProjectGuid>
+    <ProjectGuid>{259C9C1E-0C73-42B0-BA6C-7F19F7E951BD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TurtleGame</RootNamespace>
-    <AssemblyName>TurtleGame</AssemblyName>
+    <RootNamespace>_01_BasicsOfProgramming</RootNamespace>
+    <AssemblyName>01_BasicsOfProgramming</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SmallBasicLibrary">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft\Small Basic\SmallBasicLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Lesson_01.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

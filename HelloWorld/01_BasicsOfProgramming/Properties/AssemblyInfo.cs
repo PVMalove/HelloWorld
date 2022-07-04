@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("OTUS_Module_03_GUITetris")]
+[assembly: AssemblyTitle("01_BasicsOfProgramming")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OTUS_Module_03_GUITetris")]
+[assembly: AssemblyProduct("01_BasicsOfProgramming")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("cf9cdaff-21b9-44fa-999a-dd57b8c20c93")]
+[assembly: Guid("259c9c1e-0c73-42b0-ba6c-7f19f7e951bd")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
