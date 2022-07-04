@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Timers;
 
-namespace OTUS_Modul_03
+namespace OTUS_Module_03
 {
     class Tetris
     {

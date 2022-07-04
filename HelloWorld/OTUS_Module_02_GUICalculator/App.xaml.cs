@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace OTUS_Modul_02
+namespace OTUS_Module_02
 {
     /// <summary>
     /// Interaction logic for App.xaml

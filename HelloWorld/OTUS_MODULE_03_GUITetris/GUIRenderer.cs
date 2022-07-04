@@ -1,6 +1,6 @@
 ﻿using Microsoft.SmallBasic.Library;
 
-namespace OTUS_Modul_03
+namespace OTUS_Module_03
 {
     class GUIRenderer : ICellsRenderer
     {

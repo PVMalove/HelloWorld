@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OTUS_Modul_02
+namespace OTUS_Module_02
 {
     
     public partial class MainWindow : Window

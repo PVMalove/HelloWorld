@@ -5,20 +5,20 @@ VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{7EACC80D-E10D-4131-8954-FC5AC628BB0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurtleGame", "TurtleGame2\TurtleGame.csproj", "{264BC3F4-1780-4103-BD6D-A466538FA6E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurtleGame", "TurtleGame\TurtleGame.csproj", "{264BC3F4-1780-4103-BD6D-A466538FA6E9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "СurrencyСonvector", "СurrencyСonvector\СurrencyСonvector.csproj", "{D05E94C7-61DE-4B62-96B8-6C969BA96870}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTUS_Modul_01", "OTUS_Modul_01\OTUS_Modul_01.csproj", "{9E7D2F4C-D963-4A82-A81A-A74A9842E737}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTUS_Module_01_Сalculator", "OTUS_Module_01_Calculator\OTUS_Module_01_Сalculator.csproj", "{9E7D2F4C-D963-4A82-A81A-A74A9842E737}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTUS_Modul_02", "OTUS_Modul_02\OTUS_Modul_02.csproj", "{75B7FB89-69A7-40C2-A77B-68A157D7F711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTUS_Module_02_GUICalculator", "OTUS_Module_02_GUICalculator\OTUS_Module_02_GUICalculator.csproj", "{75B7FB89-69A7-40C2-A77B-68A157D7F711}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{30635DB7-D023-4228-80F5-DC2918579456}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTUS_Modul_03", "OTUS_Modul_03\OTUS_Modul_03.csproj", "{E3426939-5426-417A-80FD-627736EB2312}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTUS_Module_03_Tetris", "OTUS_Module_03_Tetris\OTUS_Module_03_Tetris.csproj", "{E3426939-5426-417A-80FD-627736EB2312}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTUS_Module_03_GUITetris", "OTUS_MODULE_03_GUITetris\OTUS_Module_03_GUITetris.csproj", "{CF9CDAFF-21B9-44FA-999A-DD57B8C20C93}"
 EndProject

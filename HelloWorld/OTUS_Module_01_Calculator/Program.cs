@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTUS_Modul_01
+namespace OTUS_Module_01
 {
     class Program
     {
