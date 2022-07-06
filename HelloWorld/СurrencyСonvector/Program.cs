@@ -15,15 +15,15 @@ namespace СurrencyСonvector
             string currencyType = Console.ReadLine();
             if (currencyType == "1")
             {
-                Console.WriteLine("Курсы валют на сегодня: 1 USD = " + rubUsd + " RUB.");
+                Console.WriteLine($"Курсы валют на сегодня: 1 USD = {rubUsd} RUB.");
                 float result = rubUsd * float.Parse(sum);
-                Console.WriteLine("Результат: " + result + " USD.");
+                Console.WriteLine($"Результат: {result} USD.");
             }
             else if (currencyType == "2")
             {
-                Console.WriteLine("Курсы валют на сегодня: 1 EUR = " + rubEur + " RUB.");
+                Console.WriteLine($"Курсы валют на сегодня: 1 EUR = {rubUsd} RUB.");
                 float result = rubEur * float.Parse(sum); ;
-                Console.WriteLine("Результат конвертации: " + result + " EUR.");
+                Console.WriteLine($"Результат конвертации: {rubUsd} EUR.");
             }  
         }
     }
