@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CsharpLight", "CsharpLight"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_BasicsOfProgramming", "01_BasicsOfProgramming\01_BasicsOfProgramming.csproj", "{259C9C1E-0C73-42B0-BA6C-7F19F7E951BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_ConditionalOperatorsAndLoops", "02_ConditionalOperatorsAndLoops\02_ConditionalOperatorsAndLoops.csproj", "{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{259C9C1E-0C73-42B0-BA6C-7F19F7E951BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{259C9C1E-0C73-42B0-BA6C-7F19F7E951BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{259C9C1E-0C73-42B0-BA6C-7F19F7E951BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{E3426939-5426-417A-80FD-627736EB2312} = {47826D6F-BA6A-4A4A-B798-3CBC2CDD6313}
 		{CF9CDAFF-21B9-44FA-999A-DD57B8C20C93} = {47826D6F-BA6A-4A4A-B798-3CBC2CDD6313}
 		{259C9C1E-0C73-42B0-BA6C-7F19F7E951BD} = {55252A9D-C751-40AA-A54B-B12E9C8D5E5E}
+		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC} = {55252A9D-C751-40AA-A54B-B12E9C8D5E5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF65BA7E-7A0D-48DE-B8D7-DE2E13D6E7E7}
