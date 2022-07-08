@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _02_ConditionalOperatorsAndLoops
 {
@@ -15,6 +11,13 @@ namespace _02_ConditionalOperatorsAndLoops
             //ConditionalOperatorsLesson03();
             //ConditionalOperatorsPractice01();
             //ConditionalOperatorsPractice02();
+            //Homework.HomeWork01();
+            //Homework.HomeWork02();
+            //Homework.HomeWork03();
+            //Homework.HomeWork04();
+            //CyclesPractice01();
+            CyclesPractice02();
+
             Console.ReadKey();
         }
 
@@ -151,6 +154,55 @@ namespace _02_ConditionalOperatorsAndLoops
             }
             Console.WriteLine($"Ваш баланс: {rub} рублей, и {usd} долларов.");
 
+        }
+        static void CyclesPractice01()
+        {
+            float money;
+            int yaers;
+            int percnt;
+            Console.Write("Введите количество денег внесенных на вклад: ");
+            money = float.Parse(Console.ReadLine());
+            Console.Write("На сколько лет открыт вклад: ");
+            yaers = int.Parse(Console.ReadLine());
+            Console.Write("Под какой процент: ");
+            percnt = int.Parse(Console.ReadLine());
+
+            for(int i = 0; i < yaers; i++)
+            {
+                money += money / 100 * percnt;
+                Console.WriteLine($"В этом году у вас {money}");
+                Console.ReadKey();
+            }
+
+        }
+        static void CyclesPractice02()
+        {
+            int number, lower, larget;
+            int numberAttempts = 5;
+            Random rand = new Random();
+            int userInput;
+
+            number = rand.Next(0, 100);
+            lower = rand.Next(number - 10, number);
+            larget = rand.Next(number + 1, number + 10);
+
+            Console.WriteLine($"Отгадай число от 0 до 100, оно больше, чем {lower}, но меньше, чем {larget}.");
+            
+            while(numberAttempts-- > 0)
+            {
+                Console.Write("Введи число: ");
+                userInput = int.Parse(Console.ReadLine());
+
+                if (number == userInput)
+                {
+                    Console.WriteLine($"Вы угадали! Это было число {number}");
+                    break;
+                }
+                else
+                    Console.WriteLine("Try again!");
+            }
+            if (numberAttempts < 0)
+                Console.WriteLine($"Вы проиграли! Это было число {number}");
         }
     }
 }
