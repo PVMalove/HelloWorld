@@ -16,8 +16,7 @@ namespace _02_ConditionalOperatorsAndLoops
             //Homework.HomeWork03();
             //Homework.HomeWork04();
             //CyclesPractice01();
-            CyclesPractice02();
-
+            //CyclesPractice02();
             Console.ReadKey();
         }
 
@@ -167,7 +166,7 @@ namespace _02_ConditionalOperatorsAndLoops
             Console.Write("Под какой процент: ");
             percnt = int.Parse(Console.ReadLine());
 
-            for(int i = 0; i < yaers; i++)
+            for (int i = 0; i < yaers; i++)
             {
                 money += money / 100 * percnt;
                 Console.WriteLine($"В этом году у вас {money}");
@@ -187,8 +186,8 @@ namespace _02_ConditionalOperatorsAndLoops
             larget = rand.Next(number + 1, number + 10);
 
             Console.WriteLine($"Отгадай число от 0 до 100, оно больше, чем {lower}, но меньше, чем {larget}.");
-            
-            while(numberAttempts-- > 0)
+
+            while (numberAttempts-- > 0)
             {
                 Console.Write("Введи число: ");
                 userInput = int.Parse(Console.ReadLine());

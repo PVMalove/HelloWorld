@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_BasicsOfProgramming", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_ConditionalOperatorsAndLoops", "02_ConditionalOperatorsAndLoops\02_ConditionalOperatorsAndLoops.csproj", "{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Arrays", "03_Arrays\03_Arrays.csproj", "{F0C5972D-0B75-40AC-9433-4495C97B4E13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0C5972D-0B75-40AC-9433-4495C97B4E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C5972D-0B75-40AC-9433-4495C97B4E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C5972D-0B75-40AC-9433-4495C97B4E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C5972D-0B75-40AC-9433-4495C97B4E13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{CF9CDAFF-21B9-44FA-999A-DD57B8C20C93} = {47826D6F-BA6A-4A4A-B798-3CBC2CDD6313}
 		{259C9C1E-0C73-42B0-BA6C-7F19F7E951BD} = {55252A9D-C751-40AA-A54B-B12E9C8D5E5E}
 		{CC07AC63-1874-4DAB-B76E-608F0E2F16EC} = {55252A9D-C751-40AA-A54B-B12E9C8D5E5E}
+		{F0C5972D-0B75-40AC-9433-4495C97B4E13} = {55252A9D-C751-40AA-A54B-B12E9C8D5E5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF65BA7E-7A0D-48DE-B8D7-DE2E13D6E7E7}
