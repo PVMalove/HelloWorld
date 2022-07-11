@@ -12,7 +12,9 @@ namespace _03_Arrays
             //ArraysPractice03();
             //Homework.HomeWork01();
             //TwoDimensionalArrayLesson01();
-            TwoDimensionalArrayLesson02();
+            //TwoDimensionalArrayLesson02();
+            //TwoDimensionalArrayLesson03();
+            //Homework.HomeWork02();
 
             Console.ReadKey();
         }
@@ -100,7 +102,7 @@ namespace _03_Arrays
             }
         }
         static void TwoDimensionalArrayLesson01()
-        
+
         {
             int[,] array = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
             for (int i = 0; i < array.GetLength(0); i++)
@@ -118,13 +120,76 @@ namespace _03_Arrays
             Random rand = new Random();
             for (int i = 0; i < array.GetLength(0); i++)
             {
-                for(int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
                     array[i, j] = rand.Next(0, 2);
                     Console.Write(array[i, j] + " ");
                 }
                 Console.WriteLine();
             }
+        }
+        static void TwoDimensionalArrayLesson03()
+        {
+            int rows;
+            int cols;
+            string author;
+            bool isOpen = true;
+            bool authorIsFind = false;
+            string[,] books = {
+                { "Пушкин","Лермотов","Достаевский" },
+                { "Стивен Кинг","Говард Лавкрафт","Чак Паланик" },
+                { "Донцова","Алена Карр","Игорь Прокопенко" } };
+            while (isOpen)
+            {
+                Console.WriteLine("Библеотека.");
+                Console.WriteLine("\n 1 - Найти книгу по индексу.\n 2 - Найти книгу по автору. \n 3 - Вывести все книги. \n 4 - Выход.\n");
+                Console.Write("Введите номер команды: ");
+                switch (int.Parse(Console.ReadLine()))
+                {
+                    case 1:
+                        Console.Write("Введите номер полки: ");
+                        rows = int.Parse(Console.ReadLine()) - 1;
+                        Console.Write("Введите номер книги: ");
+                        cols = int.Parse(Console.ReadLine()) - 1;
+                        Console.WriteLine("\n Это книга - " + books[rows, cols] + "\n");
+                        break;
+                    case 2:
+                        Console.Write("Введите нужного автора: ");
+                        author = Console.ReadLine();
+                        for (int i = 0; i < books.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < books.GetLength(1); j++)
+                            {
+                                if (author.ToLower() == books[i, j].ToLower())
+                                {
+                                    Console.Write("Автор - " + books[i, j] + ", находится на полке: " + (i + 1) + "\n");
+                                    authorIsFind = true;
+                                }
+                            }
+                        }
+                        if (!authorIsFind)
+                            Console.WriteLine("Такого автора нет!");
+                        break;
+                    case 3:
+                        Console.WriteLine("Список авторов: ");
+                        for (int i = 0; i < books.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < books.GetLength(1); j++)
+                            {
+                                Console.WriteLine(books[i, j]);
+                            }
+                        }
+                        break;
+                    case 4:
+                        isOpen = false;
+                        break;
+                }
+                Console.Write("Нажмите любую клавищу для продолжения...");
+                Console.ReadKey();
+                Console.Clear();
+            }
+
+
         }
     }
 }

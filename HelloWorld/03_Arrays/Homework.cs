@@ -18,7 +18,6 @@ namespace _03_Arrays
          * Массив всех локальных максимумов не нужен.
          */
         private static int _arraySize = 30;
-
         public static void HomeWork01()
         {
             Console.WriteLine($"Программа по поиску локальных максимумов в массиве их {_arraySize} элементов:\n");
@@ -39,6 +38,44 @@ namespace _03_Arrays
                 {
                     Console.WriteLine($"Элемент массива № {i}) - {array[i]}");
                 }
+            }
+        }
+        /* 
+         * Задача 01:
+         * Найти наибольший элемент матрицы A(10,10) и записать ноль в ту ячейку, где он находится.
+         * Вывести наибольший элемент, исходную и полученную матрицу.
+         * Массив под измененную версию не нужен.
+         */
+        private static int _valueMax;
+        public static void HomeWork02()
+        {
+            int[,] array = new int[10, 10];
+            Random rand = new Random();
+            Console.WriteLine("Исходная матрица: \n");
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = rand.Next(10, 100);
+                    Console.Write(array[i, j] + " ");
+                    if (_valueMax < array[i, j])
+                        _valueMax = array[i, j];
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine($"\nНаибольший элемент матрицы: {_valueMax}\n");
+            Console.WriteLine("Измененая матрица: \n");
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (array[i, j] == _valueMax)
+                    {
+                        array[i, j] = 0;
+                    }
+                    Console.Write(array[i, j] + " ");                    
+                }
+                Console.WriteLine();
             }
         }
     }
