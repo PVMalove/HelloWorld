@@ -15,6 +15,10 @@ namespace _03_Arrays
             //TwoDimensionalArrayLesson02();
             //TwoDimensionalArrayLesson03();
             //Homework.HomeWork02();
+            //Homework.HomeWork03();
+            //ArrayExtension01();
+            //ArrayExtension02();
+            //ForeachArray();
 
             Console.ReadKey();
         }
@@ -190,6 +194,99 @@ namespace _03_Arrays
             }
 
 
+        }
+        static void ArrayExtension01()
+        {
+            int[] bag = new int[1];
+            int[] tempBag = new int[bag.Length + 1];
+            for (int i = 0; i < bag.Length; i++)
+            {
+                tempBag[i] = bag[i];
+            }
+            tempBag[tempBag.Length - 1] = 10;
+            bag = tempBag;
+            Console.WriteLine(bag.Length);
+        }
+        static void ArrayExtension02()
+        {
+            Console.CursorVisible = false;
+            Console.SetWindowSize(18, 15);
+            Console.SetBufferSize(18, 15);
+            char[,] gameField =
+            {
+                {'#','#','#','#','#','#','#','#','#','#','#','#'},
+                {'#',' ','#',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#','X','#',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ','#',' ',' ',' ','X',' ',' ','X',' ','#'},
+                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#','X','#',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ','#',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ','#',' ',' ',' ','X',' ',' ',' ',' ','#'},
+                {'#',' ','#',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#','#','#','#','#','#','#','#','#','#','#','#' }
+            };
+            int userX = 6, userY = 6;
+            char[] bag = new char[0];
+            while (true)
+            {
+                Console.SetCursorPosition(0, 12);
+                Console.Write("Суммка: ");
+                for(int i = 0; i < bag.Length; i++)
+                {
+                    Console.Write(bag[i] + " ");
+                }
+                Console.SetCursorPosition(0, 0);
+                for (int i = 0; i < gameField.GetLength(0); i++)
+                {
+                    for(int j = 0; j < gameField.GetLength(1); j++)
+                    {
+                        Console.Write(gameField[i, j]);
+                    }
+                    Console.WriteLine();
+                }
+                Console.SetCursorPosition(userY, userX);
+                Console.Write('@');
+                ConsoleKeyInfo charKey = Console.ReadKey();
+                switch (charKey.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        if (gameField[userX - 1, userY] != '#')
+                            userX--;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        if (gameField[userX + 1, userY] != '#')
+                            userX++;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        if (gameField[userX, userY - 1] != '#')
+                            userY--;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        if (gameField[userX, userY + 1] != '#')
+                            userY++;
+                        break;
+                }
+                if(gameField[userX,userY] == 'X')
+                {
+                    gameField[userX, userY] = 'o';
+                    char[] tempBag = new char[bag.Length + 1];
+                    for(int i = 0; i < bag.Length; i++)
+                    {
+                        tempBag[i] = bag[i];
+                    }
+                    tempBag[tempBag.Length - 1] = 'X';
+                    bag = tempBag;
+                }
+                Console.Clear();
+            }
+        }
+        static void ForeachArray()
+        {
+            int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            foreach (var number in numbers)
+            {
+                Console.Write(number + " ");
+            }
         }
     }
 }

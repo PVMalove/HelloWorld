@@ -41,7 +41,7 @@ namespace _03_Arrays
             }
         }
         /* 
-         * Задача 01:
+         * Задача 02:
          * Найти наибольший элемент матрицы A(10,10) и записать ноль в ту ячейку, где он находится.
          * Вывести наибольший элемент, исходную и полученную матрицу.
          * Массив под измененную версию не нужен.
@@ -73,10 +73,39 @@ namespace _03_Arrays
                     {
                         array[i, j] = 0;
                     }
-                    Console.Write(array[i, j] + " ");                    
+                    Console.Write(array[i, j] + " ");
                 }
                 Console.WriteLine();
             }
+        }
+        /* 
+         * Задача 03:
+         * Дан двумерный массив.
+         * Вычислить сумму второй строки и произведение первого 
+         * столбца. Вывести исходную матрицу и результаты вычислений.
+         */
+        private static int _lineSecondSum;
+        private static int _columnFirstMultiplication = 1;
+        public static void HomeWork03()
+        {
+            int[,] array = new int[10, 10];
+            Random rand = new Random();
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = rand.Next(1, 3);
+                    Console.Write(array[i, j] + " ");
+                    if (i == 1)
+                        _lineSecondSum += array[i, j];
+                    if (j == 0)
+                        _columnFirstMultiplication *= array[i, j];
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine($"\nСумма второй стороки: {_lineSecondSum}");
+            Console.WriteLine($"Произведение первого столбца: {_columnFirstMultiplication}");
         }
     }
 }
