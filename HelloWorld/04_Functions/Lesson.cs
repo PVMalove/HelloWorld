@@ -14,7 +14,8 @@ namespace _04_Functions
             //FunctionsWithReturnValuesLesson02();
             //TransferringDataToFunctionLesson03();
             //OverloadingLesson04();
-            Homework.HomeWork01();
+            //Homework.HomeWork01();
+            Homework.HomeWork02();
             Console.ReadKey();
         }
 

@@ -49,5 +49,36 @@ namespace _04_Functions
                 array[i] = shuffledElement;
             }
         }
+        /* 
+         * Задача 02:
+         * Написать функцию, которая запрашивает число у пользователя (с помощью метода Console.ReadLine())
+         * и пытается сконвертировать его в тип int (с помощью int.TryParse())
+         * Если конвертация не удалась у пользователя запрашивается число повторно 
+         * до тех пор, пока не будет введено верно. 
+         * После ввода, который удалось преобразовать в число, число возвращается.    
+         */
+        public static void HomeWork02()
+        {
+            InputUser();
+        }
+        private static void InputUser()
+        {
+            int number;
+            while (true)
+            {
+                Console.Write("Введите число: ");
+                string inputUser = Console.ReadLine();
+                if (int.TryParse(inputUser, out number))
+                {
+                    Console.WriteLine($"\nВы ввели число: {number}");
+                    break;
+                }
+                else
+                    Console.WriteLine($"Вы ввели не число, Try again!");
+                Console.Write("Press any key...");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
     }
 }
