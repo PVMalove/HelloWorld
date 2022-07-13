@@ -16,10 +16,9 @@ namespace _03_Arrays
             //TwoDimensionalArrayLesson03();
             //Homework.HomeWork02();
             //Homework.HomeWork03();
-            //ArrayExtension01();
-            //ArrayExtension02();
-            //ForeachArray();
-
+            //ArrayExtensionLesson01();
+            //ArrayExtensionPractice01();
+            //ForeachArrayLesson01();
             Console.ReadKey();
         }
 
@@ -195,7 +194,7 @@ namespace _03_Arrays
 
 
         }
-        static void ArrayExtension01()
+        static void ArrayExtensionLesson01()
         {
             int[] bag = new int[1];
             int[] tempBag = new int[bag.Length + 1];
@@ -207,7 +206,7 @@ namespace _03_Arrays
             bag = tempBag;
             Console.WriteLine(bag.Length);
         }
-        static void ArrayExtension02()
+        static void ArrayExtensionPractice01()
         {
             Console.CursorVisible = false;
             Console.SetWindowSize(18, 15);
@@ -280,7 +279,7 @@ namespace _03_Arrays
                 Console.Clear();
             }
         }
-        static void ForeachArray()
+        static void ForeachArrayLesson01()
         {
             int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             foreach (var number in numbers)
