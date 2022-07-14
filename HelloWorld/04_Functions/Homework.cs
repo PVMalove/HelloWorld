@@ -80,5 +80,55 @@ namespace _04_Functions
                 Console.Clear();
             }
         }
+        /* 
+         * Задача 03:
+         * Разработайте функцию, которая рисует некий бар(Healthbar, Manabar)
+         * в определённой позиции. Она также принимает некий закрашенный процент.
+         * При 40% бар выглядит так:
+         * [####_____]
+         */
+        private static double _health = 1;
+        private static int _lengthBar = 10;
+        private static double _mana = 1;
+        public static void HomeWork03()
+        {
+            while (true)
+            {
+                Console.SetCursorPosition(0, 0);
+                Console.Write("Введите процент текущего здоровья: ");
+                _health = double.Parse(Console.ReadLine());
+                Console.Write("Введите процент текущего количества мана: ");
+                _mana = double.Parse(Console.ReadLine());
+                DrawBar(_health, _lengthBar, ConsoleColor.Red, 2, "Healthbar");
+                DrawBar(_mana, _lengthBar, ConsoleColor.Blue, 3, "Manabar");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+        private static void DrawBar(double value, int lengthBar, ConsoleColor color, int position, string text)
+        {
+            ConsoleColor defaultColor = Console.BackgroundColor;
+            if (value >= 0 && value <= 100)
+            {
+                int currentValue = (int)Math.Round(lengthBar * (value / 100));
+                string bar = "";
+                for (int i = 0; i < currentValue; i++)
+                {
+                    bar += "#";
+                }
+                Console.SetCursorPosition(0, position);
+                Console.Write('[');
+                Console.BackgroundColor = color;
+                Console.Write(bar);
+                Console.BackgroundColor = defaultColor;
+                bar = "";
+                for (int i = currentValue; i < lengthBar; i++)
+                {
+                    bar += "_";
+                }
+                Console.Write(bar + ']');
+                Console.Write(" "+ text);
+            }
+        }            
     }
 }
