@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _04_Functions
 {
@@ -18,7 +14,7 @@ namespace _04_Functions
             //Homework.HomeWork01();
             //Homework.HomeWork02();
             //Homework.HomeWork03();
-            FunctionsGamePacManLesson05();
+            //FunctionsGamePacManLesson05();
             Console.ReadKey();
         }
 
