@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _05_Collections
 {
@@ -13,7 +10,8 @@ namespace _05_Collections
             //CollectionsListLesson01();
             //CollectionsQueueLesson02();
             //CollectionsStackLesson03();
-            CollectionsDictionary04();
+            //CollectionsDictionary04();
+            Homework.HomeWork01();
             Console.ReadKey();
         }
         static void CollectionsListLesson01()

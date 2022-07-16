@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4223158F-5AAD-4A18-9B9C-16337597A87C}</ProjectGuid>
+    <ProjectGuid>{99557E06-26E9-4372-8658-3C1030BFF93D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_05_Collections</RootNamespace>
-    <AssemblyName>05_Collections</AssemblyName>
+    <RootNamespace>_06_ObjectOrientedProgramming</RootNamespace>
+    <AssemblyName>06_ObjectOrientedProgramming</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Homework.cs" />
     <Compile Include="Lesson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
