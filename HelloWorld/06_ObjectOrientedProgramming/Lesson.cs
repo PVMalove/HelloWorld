@@ -19,7 +19,9 @@ namespace _06_ObjectOrientedProgramming
             //Homework.HomeWork01();
             //PropertyEncapsulationLesson07();
             //Homework.HomeWork02();
-            ProblemOfPropertiesAndArraysLesson08();
+            //ProblemOfPropertiesAndArraysLesson08();
+            //OOPPractice02();
+            //VirtualMethodsLesson09();
             Console.ReadKey();
         }
         static void ClassesAndObjectsLesson01()
@@ -103,7 +105,41 @@ namespace _06_ObjectOrientedProgramming
             //prison._prisoner[0].ShowInfo();
             prison.SearchPrisoner(121);
         }
+        static void OOPPractice02()
+        {
+            int fighterIndex;
+            Fighter[] fighters = { new Fighter("John", 500, 50, 0), new Fighter("Mark", 250, 20, 25), new Fighter("Alex",150,100,10), new Fighter("Maxx",300,30,0) };
+            for (int i = 0; i < fighters.Length; i++)
+            {
+                Console.Write((i+1) + " ");
+                fighters[i].ShowStats();
+            }
+            Console.Write("Выбирите бойца 1р: ");
+            fighterIndex = int.Parse(Console.ReadLine()) - 1;
+            Fighter firstFighter = fighters[fighterIndex];
+            Console.Write("Выбирите бойца 2р: ");
+            fighterIndex = int.Parse(Console.ReadLine()) - 1;
+            Fighter secondFighter = fighters[fighterIndex];
+            while (firstFighter.Health > 0 && secondFighter.Health >0)
+            {
+                Console.WriteLine();
+                firstFighter.TakeDamege(secondFighter.Damege);
+                secondFighter.TakeDamege(firstFighter.Damege);
+                firstFighter.ShowStats();
+                secondFighter.ShowStats();
+            }
+        }
+        static void VirtualMethodsLesson09()
+        {
+            NPC[] npcs = new[] { new NPC(), new Fermer(), new Archer(), new Child() };
+            foreach (var npc in npcs)
+            {
+                npc.ShowDescription();
+                Console.WriteLine("================");
+            }
+        }
     }
+    #region [Lesson 01 - 08]
     //Методы, Конструкторы
     class Car
     {
@@ -124,7 +160,7 @@ namespace _06_ObjectOrientedProgramming
             Console.WriteLine($"Модель: {Model}, Цвет: {Color}, Максимальная скорость: {MaxSpeed}.");
         }
     }
-    //Практика Администрирование кафе
+    //Практика. Администрирование кафе
     class Table
     {
         private int _number;
@@ -298,11 +334,77 @@ namespace _06_ObjectOrientedProgramming
         {
             for (int i = 0; i < _prisoner.Length; i++)
             {
-                if(number == _prisoner[i].Number)
+                if (number == _prisoner[i].Number)
                 {
                     _prisoner[i].ShowInfo();
                 }
             }
         }
     }
+    #endregion
+    //Практика. Бой
+    class Fighter
+    {
+        private string _name;
+        private int _health;
+        public int Health
+        {
+            get
+            {
+                return _health;
+            }
+        }
+        private int _damege;
+        public int Damege
+        {
+            get
+            {
+                return _damege;
+            }
+        }
+        private int _armor;
+
+        public Fighter(string name, int health, int damege, int armor)
+        {
+            _name = name;
+            _health = health;
+            _damege = damege;
+            _armor = armor;
+        }
+        public void ShowStats()
+        {
+            Console.WriteLine($"{_name} HP - {_health} DMG - {_damege}  ARMOR - {_armor}");
+        }
+        public void TakeDamege(int damege)
+        {
+            _health -= damege - _armor;
+        }
+    }
+    //Виртуальные методы
+    class NPC
+    {
+        public virtual void ShowDescription()
+        {
+            Console.WriteLine("Я просто NPC, умею только гулять.");
+        }
+    }
+    class Fermer : NPC
+    {
+        public override void ShowDescription()
+        {
+            base.ShowDescription();
+            Console.WriteLine("Я фермер. Пойду работать.");
+        }
+    }
+    class Archer : NPC
+    {
+        public override void ShowDescription()
+        {
+            Console.WriteLine("Я войн! Пойду в бой!");
+        }
+    }
+    class Child : NPC 
+    {        
+    }
+
 }
