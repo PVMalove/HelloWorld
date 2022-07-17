@@ -16,6 +16,10 @@ namespace _06_ObjectOrientedProgramming
             //OOPPractice01();
             //HasConnectionLesson05();
             //InheritanceLesson06();
+            //Homework.HomeWork01();
+            //PropertyEncapsulationLesson07();
+            //Homework.HomeWork02();
+            ProblemOfPropertiesAndArraysLesson08();
             Console.ReadKey();
         }
         static void ClassesAndObjectsLesson01()
@@ -85,7 +89,22 @@ namespace _06_ObjectOrientedProgramming
             pavel.ShowInfo();
             oleg.ShowInfo();
         }
+        static void PropertyEncapsulationLesson07()
+        {
+            Renderer renderer = new Renderer();
+            Player player = new Player(5, 5);
+            //renderer.DrawPlayer(player.GetX(), player.GetY());
+            renderer.DrawPlayer(player.X, player.Y);
+        }
+        static void ProblemOfPropertiesAndArraysLesson08()
+        {
+            Prison prison = new Prison(new Prisoner[] { new Prisoner("Ivanov", 233), new Prisoner("Petrov", 121) });
+            //prison.Prisoner[0] = new Prisoner("Bashirov", 544);
+            //prison._prisoner[0].ShowInfo();
+            prison.SearchPrisoner(121);
+        }
     }
+    //Методы, Конструкторы
     class Car
     {
         public string Color;
@@ -105,7 +124,7 @@ namespace _06_ObjectOrientedProgramming
             Console.WriteLine($"Модель: {Model}, Цвет: {Color}, Максимальная скорость: {MaxSpeed}.");
         }
     }
-
+    //Практика Администрирование кафе
     class Table
     {
         private int _number;
@@ -134,7 +153,7 @@ namespace _06_ObjectOrientedProgramming
                 return isResrve;
         }
     }
-
+    //Связь Has-a
     class User
     {
         public string Name;
@@ -172,7 +191,7 @@ namespace _06_ObjectOrientedProgramming
             Console.WriteLine($"Ответственный {Worker.Name} - Задача: {Description}");
         }
     }
-
+    //Наследование (Is-a)
     class Warrior
     {
         protected int Health;
@@ -212,6 +231,78 @@ namespace _06_ObjectOrientedProgramming
         {
             Armor -= 2;
             Health += 10;
+        }
+    }
+    //Свойства
+    class Renderer
+    {
+        public void DrawPlayer(int x, int y, char symbol = '#')
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(symbol);
+        }
+    }
+    class Player
+    {
+        //private int _x;
+        //private int _y;
+        public Player(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+        public int X { get; private set; }
+        //{
+        //    get
+        //    {
+        //        return _x;
+        //    }
+        //    private set
+        //    {
+        //        _x = value;
+        //    }
+        //}
+        public int Y { get; private set; }
+        //public int GetX()
+        //{
+        //    return _x;
+        //}
+        //public int GetY()
+        //{
+        //    return _y;
+        //}
+    }
+    //Проблема свойств и массивов.
+    class Prisoner
+    {
+        private string _name;
+        public int Number { get; private set; }
+        public Prisoner(string name, int number)
+        {
+            _name = name;
+            Number = number;
+        }
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Заключенный номер {Number}, имя {_name}");
+        }
+    }
+    class Prison
+    {
+        private Prisoner[] _prisoner;
+        public Prison(Prisoner[] prisoner)
+        {
+            _prisoner = prisoner;
+        }
+        public void SearchPrisoner(int number)
+        {
+            for (int i = 0; i < _prisoner.Length; i++)
+            {
+                if(number == _prisoner[i].Number)
+                {
+                    _prisoner[i].ShowInfo();
+                }
+            }
         }
     }
 }
