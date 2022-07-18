@@ -22,6 +22,12 @@ namespace _06_ObjectOrientedProgramming
             //ProblemOfPropertiesAndArraysLesson08();
             //OOPPractice02();
             //VirtualMethodsLesson09();
+            //RenewalCycleLesson10();
+            //InterfacesLesson11();
+            //AbstractClassesLesson12();
+            //StaticMembersLesson13();
+            //StaticConstructorLesson14();
+            //OOPPractice03();
             Console.ReadKey();
         }
         static void ClassesAndObjectsLesson01()
@@ -108,10 +114,10 @@ namespace _06_ObjectOrientedProgramming
         static void OOPPractice02()
         {
             int fighterIndex;
-            Fighter[] fighters = { new Fighter("John", 500, 50, 0), new Fighter("Mark", 250, 20, 25), new Fighter("Alex",150,100,10), new Fighter("Maxx",300,30,0) };
+            Fighter[] fighters = { new Fighter("John", 500, 50, 0), new Fighter("Mark", 250, 20, 25), new Fighter("Alex", 150, 100, 10), new Fighter("Maxx", 300, 30, 0) };
             for (int i = 0; i < fighters.Length; i++)
             {
-                Console.Write((i+1) + " ");
+                Console.Write((i + 1) + " ");
                 fighters[i].ShowStats();
             }
             Console.Write("Выбирите бойца 1р: ");
@@ -120,7 +126,7 @@ namespace _06_ObjectOrientedProgramming
             Console.Write("Выбирите бойца 2р: ");
             fighterIndex = int.Parse(Console.ReadLine()) - 1;
             Fighter secondFighter = fighters[fighterIndex];
-            while (firstFighter.Health > 0 && secondFighter.Health >0)
+            while (firstFighter.Health > 0 && secondFighter.Health > 0)
             {
                 Console.WriteLine();
                 firstFighter.TakeDamege(secondFighter.Damege);
@@ -138,8 +144,55 @@ namespace _06_ObjectOrientedProgramming
                 Console.WriteLine("================");
             }
         }
+        static void RenewalCycleLesson10()
+        {
+            Behavior[] behaviours =
+            {
+                new Mover(),
+                new Jumper()
+            };
+            foreach (var behaviour in behaviours)
+            {
+                behaviour.Update();
+            }
+        }
+        static void InterfacesLesson11()
+        {
+            IMovable[] movables = new IMovable[] { new Human(), new Bicycl() };
+            foreach (var movable in movables)
+            {
+                movable.Move();
+            }
+        }
+        static void AbstractClassesLesson12()
+        {
+            Vehicle tractor = new Tractor();
+            tractor.Move();
+            Console.WriteLine(tractor.GetCurrentSpeed());
+        }
+        static void StaticMembersLesson13()
+        {
+            UserСustomer.Ids = 10;
+            UserСustomer user = new UserСustomer();
+            UserСustomer user2 = new UserСustomer();
+            Console.WriteLine(user.Id);
+            Console.WriteLine(user2.Id);
+            UserСustomer.SalaryPerHour = 100;
+            Console.WriteLine(user.GetSalaryPerDay());
+        }
+        static void StaticConstructorLesson14()
+        {
+            Console.WriteLine("Hello World");
+            SomeClass instance = new SomeClass();
+            Console.WriteLine(SomeClass.StaticField);
+        }
+        static void OOPPractice03()
+        {
+            ComputerClub computerClub = new ComputerClub(8);
+            computerClub.Work();
+        }
     }
-    #region [Lesson 01 - 08]
+    #region [Lesson 01 - 14]
     //Методы, Конструкторы
     class Car
     {
@@ -341,7 +394,6 @@ namespace _06_ObjectOrientedProgramming
             }
         }
     }
-    #endregion
     //Практика. Бой
     class Fighter
     {
@@ -403,8 +455,237 @@ namespace _06_ObjectOrientedProgramming
             Console.WriteLine("Я войн! Пойду в бой!");
         }
     }
-    class Child : NPC 
-    {        
+    class Child : NPC
+    {
     }
+    //Цикл обновления
+    class Behavior
+    {
+        public virtual void Update()
+        {
 
+        }
+    }
+    class Mover : Behavior
+    {
+        public override void Update()
+        {
+            Console.WriteLine("Идти");
+        }
+    }
+    class Jumper : Behavior
+    {
+        public override void Update()
+        {
+            Console.WriteLine("Прыгать");
+        }
+    }
+    //Интерфейсы
+    interface IMovable
+    {
+        void Move();
+    }
+    class Bicycl : IMovable
+    {
+        public void Move()
+        {
+            Console.WriteLine("Ехать");
+        }
+    }
+    class Human : IMovable
+    {
+        public void Move()
+        {
+            Console.WriteLine("Идти");
+        }
+    }
+    //Абстрактные классы
+    abstract class Vehicle
+    {
+        protected float Speed;
+        public abstract void Move();
+        public float GetCurrentSpeed()
+        {
+            return Speed;
+        }
+    }
+    class Tractor : Vehicle
+    {
+        public override void Move()
+        {
+            Console.WriteLine("Машина двигается");
+        }
+    }
+    //Статические члены
+    class UserСustomer
+    {
+        public static int Ids;
+        public int Id;
+        public static int SalaryPerHour;
+        public UserСustomer()
+        {
+            Id = ++Ids;
+        }
+        public int GetSalaryPerDay()
+        {
+            return SalaryPerHour * 7;
+        }
+        public int GetSalaryPerMounth()
+        {
+            return GetSalaryPerDay() * 20;
+        }
+    }
+    //Статический конструктор
+    class SomeClass
+    {
+        public static float StaticField;
+        static SomeClass()
+        {
+            StaticField = 10;
+            Console.WriteLine("Static ctor");
+        }
+        public SomeClass()
+        {
+            Console.WriteLine("ctor");
+        }
+    }
+    #endregion
+    //Практика. Создание компьютерного клуба
+    class ComputerClub
+    {
+        private int _money = 0;
+        private List<Computer> _computers = new List<Computer>();
+        private Queue<Schoolboy> _schoolboys = new Queue<Schoolboy>();
+        public ComputerClub(int computerCount)
+        {
+            Random random = new Random();
+            for (int i = 0; i < computerCount; i++)
+            {
+                _computers.Add(new Computer(random.Next(5, 15)));
+            }
+            CreateNewScoolboy(25);
+        }
+        private void CreateNewScoolboy(int count)
+        {
+            Random random = new Random();
+            for (int i = 0; i < count; i++)
+            {
+                _schoolboys.Enqueue(new Schoolboy(random.Next(100, 250), random));
+            }
+        }
+        public void Work()
+        {
+            while (_schoolboys.Count > 0)
+            {
+                Console.WriteLine($"У компьютерного клуба сейчас {_money} рублей, ждем нового клиента");
+                Schoolboy schoolboy = _schoolboys.Dequeue();
+                Console.WriteLine($"В очереди молодой человек, он хочет купить {schoolboy.DesiredMinutes} минут.");
+                Console.WriteLine("\nСписок компьютеров:");
+                ShowAllComputers();
+                Console.Write("\nВыбирете компьютер - ");
+                int computerNumber = int.Parse(Console.ReadLine());
+                if (computerNumber >= 0 && computerNumber < _computers.Count)
+                {
+                    if (_computers[computerNumber].IsBusy)
+                        Console.WriteLine("Компьютер занят. Try again!!!");
+                    else
+                    {
+                        if (schoolboy.CheckSolvency(_computers[computerNumber]))
+                        {
+                            Console.WriteLine("Компьютер забронирован.");
+                            _money += schoolboy.ToPay();
+                            _computers[computerNumber].TakeThePlase(schoolboy);
+                        }
+                        else
+                            Console.WriteLine("Не достаточно денег.");
+                    }
+                }
+                else
+                    Console.WriteLine("Не верный номер. Try again!!!");
+                Console.WriteLine("\nДля того, чтобы перейти к новому клиенту нажмите любую клавишу.");
+                Console.ReadKey();
+                Console.Clear();
+                SkipMinute();
+            }
+        }
+        public void SkipMinute()
+        {
+            foreach (var computer in _computers)
+            {
+                computer.SkipMinute();
+            }
+        }
+        private void ShowAllComputers()
+        {
+            for (int i = 0; i < _computers.Count; i++)
+            {
+                Console.Write($"0{i}) - ");
+                _computers[i].ShowInfo();
+            }
+        }
+    }
+    class Computer
+    {
+        private Schoolboy _schoolboy;
+        private int _minutesLeft;
+        public int PriceForMinutes { get; private set; }
+        public bool IsBusy
+        {
+            get
+            {
+                return _minutesLeft > 0;
+            }
+        }
+        public Computer(int priceForMinutes)
+        {
+            PriceForMinutes = priceForMinutes;
+        }
+        public void TakeThePlase(Schoolboy schoolboy)
+        {
+            _schoolboy = schoolboy;
+            _minutesLeft = _schoolboy.DesiredMinutes;
+        }
+        public void FreeThePlace()
+        {
+            _schoolboy = null;
+        }
+        public void SkipMinute()
+        {
+            _minutesLeft--;
+        }
+        public void ShowInfo()
+        {
+            if (IsBusy)
+                Console.WriteLine($"Компьютер занят. Осталось - {_minutesLeft} минут.");
+            else
+                Console.WriteLine($"Компьютер свободен. Цена за минуту - {PriceForMinutes} рублей");
+        }
+    }
+    class Schoolboy
+    {
+        private int _money;
+        private int _moneyToPay;
+        public int DesiredMinutes { get; private set; }
+        public Schoolboy(int money, Random random)
+        {
+            _money = money;
+            DesiredMinutes = random.Next(10, 30);
+        }
+        public bool CheckSolvency(Computer computer)
+        {
+            _moneyToPay = computer.PriceForMinutes * DesiredMinutes;
+            if (_money >= _moneyToPay)
+                return true;
+            else
+            {
+                _moneyToPay = 0;
+                return false;
+            }
+        }
+        public int ToPay()
+        {
+            _money -= _moneyToPay;
+            return _moneyToPay;
+        }
+    }
 }
