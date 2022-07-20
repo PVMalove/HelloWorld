@@ -16,7 +16,7 @@ namespace _07_LINQ
             //FindingMinAndMaxLesson04();
             //LINQProjectionsLesson05();
             //LINQCombiningCollectionsLesson06();
-            LINQTakeAndSkipLesson07();
+            //LINQTakeAndSkipLesson07();
             Console.ReadKey();
         }
         static void LINQLesson01()

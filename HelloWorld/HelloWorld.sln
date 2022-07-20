@@ -40,6 +40,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_ObjectOrientedProgrammin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_LINQ", "07_LINQ\07_LINQ.csproj", "{75242189-15F5-4665-A6E6-F1EF71043E04}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSLessonsForBeginners", "CSLessonsForBeginners", "{B446390E-3E1C-463B-AB12-B894A0BB6446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YT_Lesson_01_PrimitiveDataTypesNumbers", "YT_Lesson_01_PrimitiveDataTypesNumbers\YT_Lesson_01_PrimitiveDataTypesNumbers.csproj", "{0E953536-4E79-4163-B776-83AC655CE40D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +106,10 @@ Global
 		{75242189-15F5-4665-A6E6-F1EF71043E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75242189-15F5-4665-A6E6-F1EF71043E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75242189-15F5-4665-A6E6-F1EF71043E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E953536-4E79-4163-B776-83AC655CE40D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E953536-4E79-4163-B776-83AC655CE40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E953536-4E79-4163-B776-83AC655CE40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E953536-4E79-4163-B776-83AC655CE40D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +126,7 @@ Global
 		{4223158F-5AAD-4A18-9B9C-16337597A87C} = {55252A9D-C751-40AA-A54B-B12E9C8D5E5E}
 		{99557E06-26E9-4372-8658-3C1030BFF93D} = {55252A9D-C751-40AA-A54B-B12E9C8D5E5E}
 		{75242189-15F5-4665-A6E6-F1EF71043E04} = {55252A9D-C751-40AA-A54B-B12E9C8D5E5E}
+		{0E953536-4E79-4163-B776-83AC655CE40D} = {B446390E-3E1C-463B-AB12-B894A0BB6446}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF65BA7E-7A0D-48DE-B8D7-DE2E13D6E7E7}
