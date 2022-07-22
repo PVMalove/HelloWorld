@@ -9,7 +9,8 @@ namespace YT_Lesson_02_logicComparisonsFlowOfExecution
             //IfElseLesson01();
             //SwitchLesson02();
             //Lesson03();
-            Lesson04();
+            //Lesson04();
+            Console.ReadKey();
         }
         public static int number = -15;
         static void IfElseLesson01()
