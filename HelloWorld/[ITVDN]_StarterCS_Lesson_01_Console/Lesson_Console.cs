@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _ITVDN__StarterCS_Lesson_01_Console
 {
@@ -18,7 +14,10 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             //ConsoleColors();
             //NotANumber();
             //CompoundAssignment();
-            Priority();
+            //Priority();
+            //StringVariables();
+            //CharacterVariables();
+            //StringConversion();
             Console.ReadKey();
         }
         static void MusicalScalePractice01()
@@ -186,7 +185,27 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             Console.WriteLine($"e = {e}, f = {f}");
             int g = 0, h = ++g + 5;
             Console.WriteLine($"g = {g}, h = {h}");
-
+        }
+        //Lesson14 String variables
+        static void StringVariables()
+        {                     //Стараковой литирал
+            string sentence = "Hello world!";
+            Console.WriteLine(sentence);
+            string userInput = Console.ReadLine();
+            Console.WriteLine(sentence + " " + userInput);
+        }
+        static void CharacterVariables()
+        {
+            char letter = 'A';
+            int size = sizeof(char);
+            Console.WriteLine("{0} - char, size {1} byte", letter, size);
+        }
+        static void StringConversion()
+        {
+            char latter = Convert.ToChar("A");
+            Console.WriteLine(latter);
+            string sentence = Convert.ToString('A');
+            Console.WriteLine(sentence);
         }
     }
 }
