@@ -6,8 +6,6 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
     {
         static void Main()
         {
-            //MusicalScalePractice01();
-            //ConsoleColorsPractice02();
             //ExplicitCasting();
             //NumericOperations();
             //AverageTemperature();
@@ -18,26 +16,9 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             //StringVariables();
             //CharacterVariables();
             //StringConversion();
+            //Concatenation();
+            Calculator();
             Console.ReadKey();
-        }
-        static void MusicalScalePractice01()
-        {
-            Console.Beep(523, 500);
-            Console.Beep(587, 500);
-            Console.Beep(659, 500);
-            Console.Beep(698, 500);
-            Console.Beep(784, 500);
-            Console.Beep(880, 500);
-            Console.Beep(988, 500);
-        }
-        static void ConsoleColorsPractice02()
-        {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("Hello world");
-            Console.WriteLine("Hello friends!");
-            Console.ResetColor();
-            Console.WriteLine("Goodbye!");
         }
         static void ExplicitCasting()
         {
@@ -118,7 +99,7 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             Console.WriteLine("T_sum: " + T_sum + " == 7 Эталоное значение");
             Console.WriteLine("T_avg: " + T_avg + " == 1 Эталоное значение");
         }
-        //Lesson 13 ArithmeticOperations
+        //Lesson 13 Arithmetic operations
         static void ConsoleColors()
         {
             Console.BackgroundColor = ConsoleColor.White;
@@ -167,13 +148,14 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             a %= 3;
             Console.WriteLine(a);
         }
-        //Приоритет и ассоциативность операторов:
-        //1) Префиксный инкремент ++x и декремент --x, унарные операторы + и -
-        //2) Мультипликативные операторы *, /, и %
-        //3) Аддитивные операторы + и -
-        //4) Постфиксный инкремент x++ и декремент x--
         static void Priority()
         {
+            //Приоритет и ассоциативность операторов:
+            //1) Префиксный инкремент ++x и декремент --x, унарные операторы + и -
+            //2) Мультипликативные операторы *, /, и %
+            //3) Аддитивные операторы + и -
+            //4) Постфиксный инкремент x++ и декремент x--
+
             //Посфиксный инкремент: х++
             int a = 0, b = a++ * 5;
             Console.WriteLine($"a = {a}, b = {b}");
@@ -206,6 +188,30 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             Console.WriteLine(latter);
             string sentence = Convert.ToString('A');
             Console.WriteLine(sentence);
+        }
+        //Lesson 15 Operations on string variables        
+        static void Concatenation()
+        {
+            //Конкатенация строк (объединение строк)
+            string firstPart = "Hello", secondPart = "world";
+            string text = firstPart + " " + secondPart;
+            text += "!";
+            Console.WriteLine(text);
+        }
+        static void Calculator()
+        {
+            Console.Write("Введите первое слагаемое: ");
+            string stringAugent = Console.ReadLine();
+
+            Console.Write("Введите первое слагаемое: ");
+            string stringAddend = Console.ReadLine();
+
+            int augent = Convert.ToInt32(stringAugent);
+            int addend = Convert.ToInt32(stringAddend);
+
+            int sum = augent + addend;
+            string result = augent + " + " + addend + " = " + sum;
+            Console.WriteLine(result);
         }
     }
 }

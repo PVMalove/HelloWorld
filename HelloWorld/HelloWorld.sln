@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32413.511
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{7EACC80D-E10D-4131-8954-FC5AC628BB0F}"
 EndProject
@@ -47,6 +47,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YT_Lesson_02_logicComparisonsFlowOfExecution", "YT_Lesson_02_logicComparisonsFlowOfExecution\YT_Lesson_02_logicComparisonsFlowOfExecution.csproj", "{E0FEE4CC-08F7-4F9F-B455-01BC055208BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[ITVDN]_StarterCS_Lesson_01_Console", "[ITVDN]_StarterCS_Lesson_01_Console\[ITVDN]_StarterCS_Lesson_01_Console.csproj", "{1068934A-5515-4B29-AF3E-57F3DD172597}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartTraining", "StartTraining", "{68E00D93-F5D4-4CC9-B3AF-8A4D2219CA9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +129,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{7EACC80D-E10D-4131-8954-FC5AC628BB0F} = {68E00D93-F5D4-4CC9-B3AF-8A4D2219CA9C}
+		{264BC3F4-1780-4103-BD6D-A466538FA6E9} = {68E00D93-F5D4-4CC9-B3AF-8A4D2219CA9C}
+		{D05E94C7-61DE-4B62-96B8-6C969BA96870} = {68E00D93-F5D4-4CC9-B3AF-8A4D2219CA9C}
 		{9E7D2F4C-D963-4A82-A81A-A74A9842E737} = {47826D6F-BA6A-4A4A-B798-3CBC2CDD6313}
 		{75B7FB89-69A7-40C2-A77B-68A157D7F711} = {47826D6F-BA6A-4A4A-B798-3CBC2CDD6313}
 		{E3426939-5426-417A-80FD-627736EB2312} = {47826D6F-BA6A-4A4A-B798-3CBC2CDD6313}
