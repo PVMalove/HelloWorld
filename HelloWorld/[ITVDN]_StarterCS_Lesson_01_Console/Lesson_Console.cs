@@ -7,17 +7,29 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
         static void Main()
         {
             //ExplicitCasting();
+            #region Lesson 12
             //NumericOperations();
             //AverageTemperature();
+            #endregion
+            #region Lesson 13
             //ConsoleColors();
             //NotANumber();
             //CompoundAssignment();
             //Priority();
+            #endregion
+            #region Lesson 14
             //StringVariables();
             //CharacterVariables();
             //StringConversion();
+            #endregion
+            #region Lesson 15
             //Concatenation();
-            Calculator();
+            //Calculator();
+            //FormttedOutput();
+            //FormatSpecifiers();
+            #endregion
+            #region Lesson 16
+            #endregion
             Console.ReadKey();
         }
         static void ExplicitCasting()
@@ -41,7 +53,8 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             double j = -1.12345d;
             decimal k = -1.12345m;
         }
-        //Lesson 12
+        #region Lesson 12
+        //Lesson 12 Операции над числовыми переменными
         static void NumericOperations()
         {
             //Члены-участники арифметических действий:
@@ -99,7 +112,9 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             Console.WriteLine("T_sum: " + T_sum + " == 7 Эталоное значение");
             Console.WriteLine("T_avg: " + T_avg + " == 1 Эталоное значение");
         }
-        //Lesson 13 Arithmetic operations
+        #endregion
+        #region Lesson 13
+        //Lesson 13 Arithmetic operations - Арифметические операторы
         static void ConsoleColors()
         {
             Console.BackgroundColor = ConsoleColor.White;
@@ -110,10 +125,8 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
                 Console.ForegroundColor++;
                 Console.WriteLine("Hello world!");
             }
-        }
-        //Унарный плюс и минус (унарный оператор "-" измененяет знак операнда на противоположный)
-        //Not-a-Number «нечисло»
-        static void NotANumber()
+        }        
+        static void NotANumber() //Not-a-Number «нечисло»
         {
             //К операциям, приводящим к появлению NaN в качестве ответа, относятся:
             //o все математические операции, содержащие NaN в качестве одного из операндов;
@@ -132,9 +145,8 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             Console.WriteLine(Math.Log(-10, 5));
             // Пример с возвидением в степень, для получения числа
             Console.WriteLine(Math.Pow(11, 2));
-        }
-        //Составное присваивание
-        static void CompoundAssignment()
+        }       
+        static void CompoundAssignment() //Составное присваивание
         {
             int a = 5;
             a += 9;
@@ -168,7 +180,9 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             int g = 0, h = ++g + 5;
             Console.WriteLine($"g = {g}, h = {h}");
         }
-        //Lesson14 String variables
+        #endregion
+        #region Lesson 14
+        //Lesson14 String variables - Строковые переменные
         static void StringVariables()
         {                     //Стараковой литирал
             string sentence = "Hello world!";
@@ -189,14 +203,24 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             string sentence = Convert.ToString('A');
             Console.WriteLine(sentence);
         }
-        //Lesson 15 Operations on string variables        
-        static void Concatenation()
+        #endregion
+        #region Lesson 15
+        //Lesson 15 Operations on string variables - Операции над строковыми переменными       
+        static void Concatenation() //Конкатенация строк
         {
             //Конкатенация строк (объединение строк)
             string firstPart = "Hello", secondPart = "world";
             string text = firstPart + " " + secondPart;
             text += "!";
             Console.WriteLine(text);
+            /*Чтобы повысить удобочитаемость исходного кода, используйте сцепление строк,
+            разделяя длинный строковой литерал на литералы меньшего размера и ставя
+            перед ними оператор “@”.*/
+            string bigText = @"Чтобы повысить удобочитаемость исходного кода, 
+используйте сцепление строк,
+разделяя длинный строковой литерал на литералы меньшего размера и ставя
+перед ними оператор “@”.";
+            Console.WriteLine(bigText);
         }
         static void Calculator()
         {
@@ -210,8 +234,45 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             int addend = Convert.ToInt32(stringAddend);
 
             int sum = augent + addend;
+            /*Рекомендация Стива Макконнелла по написанию приложений и их рефакторингу: 
+            «Присваивайте результат вычисления выражения промежуточной переменной,
+            имя которой резюмирует суть выражения».*/
             string result = augent + " + " + addend + " = " + sum;
             Console.WriteLine(result);
         }
+        static void FormttedOutput() //Форматированный вывод
+        {
+            Console.Write("Введите первое слагаемое: ");
+            string stringAugent = Console.ReadLine();
+
+            Console.Write("Введите первое слагаемое: ");
+            string stringAddend = Console.ReadLine();
+
+            int augent = Convert.ToInt32(stringAugent);
+            int addend = Convert.ToInt32(stringAddend);
+
+            int sum = augent + addend;
+                            //Строка составного формата
+            string result = string.Format("Результат: {0} + {1} = {2}", augent, addend, sum);
+            Console.WriteLine(result);
+        }
+        static void FormatSpecifiers() //Флаги форматирования
+        {
+            /*Маркер подстановки – это специальный оператор форматированного вывода,
+            позволяющий указать место в строке вывода, куда может быть вставлено 
+            значение некой переменной по ее идентификатору.*/
+            Console.WriteLine("1. C format: {0:C2}", 2.50);     // Валюта
+            Console.WriteLine("2. D format: {0:D}", 26);       // Десятичное число
+            Console.WriteLine("3. E format: {0:E2}", 250000);  // Экспоненциальный
+            Console.WriteLine("4. F format: {0:F2}", 2.5);     // С фиксированной запятой
+            Console.WriteLine("5. G format: {0:G}", 2.5);      // Общий
+            Console.WriteLine("6. N format: {0:N}", 2500000);  // Numeric
+            Console.WriteLine("7. P format: {0:P}", 0.25);     // Процент
+            Console.WriteLine("8. R format: {0:R}", 2.5);      // Приемо-передача (Round-Trip)
+            Console.WriteLine("9. X format: {0:X}", 250);      // Шестнадцатеричный
+        }
+        #endregion
+        #region Lesson 16
+        #endregion
     }
 }
