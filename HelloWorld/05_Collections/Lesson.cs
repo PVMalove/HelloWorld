@@ -9,9 +9,9 @@ namespace _05_Collections
         {
             //CollectionsListLesson01();
             //CollectionsQueueLesson02();
-            //CollectionsStackLesson03();
+            CollectionsStackLesson03();
             //CollectionsDictionary04();
-            Homework.HomeWork01();
+            //Homework.HomeWork01();
             Console.ReadKey();
         }
         static void CollectionsListLesson01()
