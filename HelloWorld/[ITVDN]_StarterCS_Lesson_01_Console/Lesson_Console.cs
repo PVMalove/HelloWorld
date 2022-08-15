@@ -31,6 +31,12 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             //EscapeSequences();
             #endregion
             #region Lesson 16
+            //LogicalOperations();
+            //ComparisonOperators();
+            #endregion
+            #region Lesson 17
+            #endregion
+            #region Lesson 18
             #endregion
             Console.ReadKey();
         }
@@ -125,7 +131,7 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
                 Console.ForegroundColor++;
                 Console.WriteLine("Hello world!");
             }
-        }        
+        }
         static void NotANumber() //Not-a-Number «нечисло»
         {
             //К операциям, приводящим к появлению NaN в качестве ответа, относятся:
@@ -145,7 +151,7 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             Console.WriteLine(Math.Log(-10, 5));
             // Пример с возвидением в степень, для получения числа
             Console.WriteLine(Math.Pow(11, 2));
-        }       
+        }
         static void CompoundAssignment() //Составное присваивание
         {
             int a = 5;
@@ -250,8 +256,8 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             int addend = Convert.ToInt32(stringAddend);
 
             int sum = augent + addend;
-                            //Строка составного формата
-            string result = string.Format("Результат: {0} + {1} = {2}", augent, addend, sum);            
+            //Строка составного формата
+            string result = string.Format("Результат: {0} + {1} = {2}", augent, addend, sum);
             /* Строка составного формата может быть указана только в параметрах метода. 
                Присвоить ее переменной напрямую не получится. */
 
@@ -352,7 +358,47 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
                               '\u0057' + '\u006f' + '\u0072' + '\u006c' + '\u0064' + '\u0021');
         }
         #endregion
-        #region Lesson 16
+        #region Lesson 16 Logical Operations - Логические величины и операции
+        static void LogicalOperations()
+        {
+            bool a = true, b = false;
+            Console.WriteLine($"Истина: {a}, Ложь: {b}");
+        }
+        /*  Операторы сравнения:
+            o равно “==”
+            o не равно “!=”
+            o меньше “<”
+            o больше “>”
+            o меньше или равно “<=”
+            o больше или равно “>=”.  */
+        static void ComparisonOperators()
+        {
+            int x = 2, y = 3;
+
+            bool isEqual = x == y;
+            Console.WriteLine($"{x} == {y} = {isEqual}");
+
+            bool isNotEqual = x != y;
+            Console.WriteLine($"{x} != {y} = {isNotEqual}");
+
+            bool isLess = x < y;
+            Console.WriteLine($"{x} <  {y} = {isLess}");
+
+            bool isGreater = x > y;
+            Console.WriteLine($"{x} >  {y} = {isGreater}");
+
+            bool isLessOrEqual = x <= y;
+            Console.WriteLine($"{x} <= {y} = {isLessOrEqual}");
+
+            bool isGreaterOrEqual = x >= y;
+            Console.WriteLine($"{x} >= {y} = {isGreaterOrEqual}");
+        }
+            /*  Со значениями строковых и булевых типов, можно использовать только операторы
+                «равно» и «не равно», использование других операторов будет приводить к ошибке. */
+        #endregion
+        #region Lesson 17
+        #endregion
+        #region Lesson 18
         #endregion
     }
 }
