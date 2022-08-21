@@ -35,6 +35,10 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             //ComparisonOperators();
             #endregion
             #region Lesson 17
+            //Negation();
+            //Conjunction();
+            //Disjunction();
+            XOR();
             #endregion
             #region Lesson 18
             #endregion
@@ -393,10 +397,221 @@ namespace _ITVDN__StarterCS_Lesson_01_Console
             bool isGreaterOrEqual = x >= y;
             Console.WriteLine($"{x} >= {y} = {isGreaterOrEqual}");
         }
-            /*  Со значениями строковых и булевых типов, можно использовать только операторы
-                «равно» и «не равно», использование других операторов будет приводить к ошибке. */
+        /*  Со значениями строковых и булевых типов, можно использовать только операторы
+            «равно» и «не равно», использование других операторов будет приводить к ошибке. */
         #endregion
-        #region Lesson 17
+        #region Lesson 17 Logical Operations - Логические операторы
+        static void Negation() //Отрицание
+        {
+            // Отрицание - унарная операция над суждениями, результатом которой является
+            // суждение(в известном смысле) «противоположное» исходному.
+            // При работе с переменными, хранящими логическое значение, используется оператор «!»,
+            // ставящийся перед именем переменной.
+            // Синоним: логическое "НЕ".Если операнд равен true, результат равен false.Если операнд равен
+            // false, то результат равен true.
+
+            Console.WriteLine($"Отрицание {true} = {!true}, a отрицание {false} = {!false}");
+
+            bool x = true, y = false;
+
+            Console.WriteLine($"Отрицание {x} = {!x}, a отрицание {y} = {!y}");
+
+            bool notX = !x, notY = !y;
+
+            Console.WriteLine($"Отрицание {x} = {notX}, a отрицание {y} = {notY}");
+
+            // Рекомендуется, как можно реже использовать отрицание логических выражений в
+            // своих программах, если такое возможно.
+
+            Console.WriteLine();
+
+            int salary = 500, minimumWage = 1000;
+
+            bool salaryNotLessMinimumWage = !(salary < minimumWage);
+            Console.WriteLine($"Зарплата {salary} USD не меньше минимальной: {salaryNotLessMinimumWage}");
+
+            bool salaryLessMinimumWage = salary < minimumWage;
+            Console.WriteLine($"Зарплата {salary} USD меньше минимальной: {salaryLessMinimumWage}");
+
+            bool salaryNotMoreLessMinimumWage = !(salary > minimumWage);
+            Console.WriteLine($"Зарплата {salary} USD не больше минимальной: {salaryNotMoreLessMinimumWage}");
+
+            bool salaryLessMoreMinimumWage = salary > minimumWage;
+            Console.WriteLine($"Зарплата {salary} USD больше минимальной: {salaryLessMoreMinimumWage}");
+
+            //Рекомендация: Используйте утвердительные имена булевых переменных.
+        }
+        static void Conjunction() //Конъюнкция (И)
+        {
+            // Конъюнкция(еще называется логическое «И») — логическая операция, по смыслу
+            //  максимально приближенная к союзу «И». В языке C#, 
+            //  оператор конъюнкции обозначается знаком «амперсанд» «&».
+            // Таблица истинности для конъюнкции высказываний:
+            //  o true  & true  = true
+            //  o true  & false = false
+            //  o false & true  = false
+            //  o false & false = false
+
+            bool x = true, y = true, result = x & y;
+            Console.WriteLine($"1. {x,-5} & {y,-5} = {result,-5}");
+
+            x = y = false; //Сквозное присвоение (множественное присвоение)
+            Console.WriteLine($"2. {x,-5} & {y,-5} = {x & y,-5}");
+
+            result = (x = true) & y;
+            Console.WriteLine($"3. {x,-5} & {y,-5} = {result,-5}");
+
+            (x, y) = (y, x); //Кортеж (параллельное присвоение)
+            Console.WriteLine($"4. {x,-5} & {y,-5} = {x & y,-5}");
+
+            Console.WriteLine();
+
+            Console.Write("Введите возраст клиента: ");
+            int clientAge = int.Parse(Console.ReadLine());
+
+            Console.Write("Ведите зарплату клиента: ");
+            int clientSalary = int.Parse(Console.ReadLine());
+
+            int minSalary = 1500, minAge = 21, maxAge = 55;
+
+            bool bankLoanAllowed = clientSalary >= minSalary & clientAge >= minAge & clientAge <= maxAge;
+            Console.WriteLine($"Кредитование доступно: {bankLoanAllowed}");
+
+            // Короткозамкнутая конъюнкция – техника, работающая по следующему принципу:
+            // если значение первого операнда в операции AND(&&) ложно, то второй операнд не
+            // вычисляется, потому что полное выражение в любом случае будет ложным.
+
+            Console.WriteLine();
+
+            int firstNumber = 0;
+            bool simpleLogicResult = true & false & (firstNumber++ > 0);
+            Console.WriteLine($"firstNumber = {firstNumber}");
+
+            int secondNumber = 0;
+            bool shortCircuitResult = true && false && (secondNumber++ > 0);
+            Console.WriteLine($"secondNumber = {secondNumber}");
+        }
+        static void Disjunction() //Дизъюнкция (ИЛИ)
+        {
+            // Дизъюнкция, логическое сложение, логическое ИЛИ, включающее ИЛИ, иногда просто
+            //  ИЛИ — логическая операция, по своему применению максимально приближённая к
+            //  союзу «или» в смысле «или то, или это, или оба сразу». Для указания операции
+            //  дизъюнкции используется вертикальный слэш( | ).
+            //  o true  || true  = true
+            //  o true  || false = true
+            //  o false || true  = true
+            //  o false || false = false
+
+            bool x = true, y = true, result = x | y;
+            Console.WriteLine($"1. {x,-5} | {y,-5} = {result,-5}");
+
+            x = y = false; //Сквозное присвоение (множественное присвоение)
+            Console.WriteLine($"2. {x,-5} | {y,-5} = {x | y,-5}");
+
+            result = (x = true) | y;
+            Console.WriteLine($"3. {x,-5} | {y,-5} = {result,-5}");
+
+            (x, y) = (y, x); //Кортеж (параллельное присвоение)
+            Console.WriteLine($"4. {x,-5} | {y,-5} = {x | y,-5}");
+
+            Console.WriteLine();
+
+            // У дизъюнкции приоритет ниже, чем у конъюнкции. А это значит, что в этом длинном
+            //  выражении, сначала, выполнятся все операции конъюнкции, а только потом
+            //  выполнятся операции дизъюнкции.
+
+            Console.Write("Возраст клиента: ");
+            int clientAge = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Зарплата клиента: ");
+            int clientSalary = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Наличие поручителя (да/нет): ");
+            bool hasGuarantor = Console.ReadLine() == "да";
+
+            Console.Write("Наличие залогового обеспечения (да/нет): ");
+
+            //Избегайте опосредованных вызовов методов других классов (Цепочка методов)
+            bool hasCollateralSecurity = Console.ReadLine().Contains("да"); //Избегайте опосредованных вызовов методов других классов
+
+            // Требование: Возраст от 21 до 55 лет "И" Зарплата не меннее 1500 доллларов
+            // "ИЛИ" если есть поручитель "ИЛИ" залоговое обеспечение, то кредит можно выдать
+
+            int minSalary = 1500, minAge = 21, maxAge = 55;
+
+            //Сделайте так, чтобы незавершенность выражения была очевидна
+            bool bankLoanAllowed = clientSalary >= minSalary & clientAge >= minAge & clientAge <= maxAge |
+                                   hasGuarantor | hasCollateralSecurity;
+            // Иногда выражение должно разбиваться на несколько строк либо потому, что
+            // оно длинней, чем это позволяют стандарты программирования, либо потому,
+            // что оно слишком длинное, чтобы поместиться в одной строке Сделайте
+            // очевидным факт, что часть выражения на первой строке является всего лишь
+            // частью Самый простой способ добиться этого разбить выражение так,
+            // чтобы его часть на первой строке стала вопиюще некорректной, если
+            // рассматривать ее отдельно
+
+            Console.WriteLine($"Кредитование доступно: {bankLoanAllowed}");
+
+            Console.WriteLine();
+            // Короткозамкнутая дизъюнкция - если значение первого операнда в операции OR(||)
+            // истинно, то второй операнд не вычисляется, потому что полное выражение в любом
+            // случае будет истинным.
+
+            int firstNumber = 0;
+            bool simpleLogicResult = true | false | (firstNumber++ > 0);
+            Console.WriteLine($"firstNumber = {firstNumber}");
+
+            int secondNumber = 0;
+            bool shortCircuitResult = true || false || (secondNumber++ > 0);
+            Console.WriteLine($"secondNumber = {secondNumber}");
+        }
+        static void XOR() //Исключающее «ИЛИ»
+        {
+            // Исключающее «ИЛИ» (еще называется «строгой дизъюнкцией», XOR - по - английски
+            // звучит как «exclusive or») — логическая операция, в случае двух переменных результат
+            // выполнения операции истинен тогда и только тогда, когда один из аргументов истинен,
+            // а другой — ложен.В случае наличия двух истин в «строго дизъюнктивных суждениях» –
+            // эти две истины приводят в итоге к ложному результату.
+            // Для указания операции исключающего «ИЛИ» используется вертикальный символ ^.
+            // Таблица истинности для исключающего «ИЛИ»:
+            //    o true ^ true = false
+            //    o true ^ false = true
+            //    o false ^ true = true
+            //    o false ^ false = false
+
+            bool x = true, y = true, result = x ^ y;
+            Console.WriteLine($"1. {x,-5} ^ {y,-5} = {result,-5}");
+
+            x = y = false; //Сквозное присвоение (множественное присвоение)
+            Console.WriteLine($"2. {x,-5} ^ {y,-5} = {x ^ y,-5}");
+
+            result = (x = true) ^ y;
+            Console.WriteLine($"3. {x,-5} ^ {y,-5} = {result,-5}");
+
+            (x, y) = (y, x); //Кортеж (параллельное присвоение)
+            Console.WriteLine($"4. {x,-5} ^ {y,-5} = {x ^ y,-5}");
+
+            Console.WriteLine();
+
+            // Короткозамкнутого оператора, исключающего «ИЛИ» в C#, не существует.
+
+            Console.Write("Фамилия запросившего субсидию: ");
+            string name = Console.ReadLine();
+
+            Console.Write($"{name} является пенсионером? : ");
+            bool isPensioner = Console.ReadLine().Contains("да");
+
+            Console.Write($"{name} состоит на учёте в службе занятости? : ");
+            bool isUnemployed = Console.ReadLine().Contains("да");
+
+            Console.Write($"{name} имеет трудоустройство? : ");
+            bool isEmployment = Console.ReadLine().Contains("да");
+
+            bool subsidyAllowed = isPensioner ^ isUnemployed ^ ((isPensioner && isEmployment) ^ (isUnemployed && isEmployment));
+
+            Console.Write($"{name} имеет право на субсидию : {subsidyAllowed}");
+
+        }
         #endregion
         #region Lesson 18
         #endregion

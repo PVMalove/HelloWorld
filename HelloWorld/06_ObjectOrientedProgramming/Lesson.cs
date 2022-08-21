@@ -21,7 +21,7 @@ namespace _06_ObjectOrientedProgramming
             //Homework.HomeWork02();
             //ProblemOfPropertiesAndArraysLesson08();
             //OOPPractice02();
-            //VirtualMethodsLesson09();
+            VirtualMethodsLesson09();
             //RenewalCycleLesson10();
             //InterfacesLesson11();
             //AbstractClassesLesson12();
@@ -435,14 +435,14 @@ namespace _06_ObjectOrientedProgramming
     //Виртуальные методы
     class NPC
     {
-        public virtual void ShowDescription()
+        protected virtual void ShowDescription()
         {
             Console.WriteLine("Я просто NPC, умею только гулять.");
         }
     }
     class Fermer : NPC
     {
-        public override void ShowDescription()
+        protected override void ShowDescription()
         {
             base.ShowDescription();
             Console.WriteLine("Я фермер. Пойду работать.");
