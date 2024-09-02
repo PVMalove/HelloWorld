@@ -13,12 +13,12 @@ public class AppContext(DbContextOptions<AppContext> options) : DbContext(option
     
     // Метод, который настраивает модель.
     // Здесь мы определяем конфигурацию для сущности Note.
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder builder)
     {
         // Указываем, что свойство Id является первичным ключом для сущности Note.
-        modelBuilder.Entity<Note>().HasKey(x => x.Id);
+        builder.Entity<Note>().HasKey(x => x.Id);
         // Ограничиваем длину текста в свойстве Text до 140 символов.
-        modelBuilder.Entity<Note>().Property(x => x.Text).HasMaxLength(140);
-        base.OnModelCreating(modelBuilder);
+        builder.Entity<Note>().Property(x => x.Text).HasMaxLength(140);
+        base.OnModelCreating(builder);
     }
 }
